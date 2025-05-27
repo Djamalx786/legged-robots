@@ -1,4 +1,11 @@
 Homework Solutions 
 
+
 Exercise 1. 
 b.8) When the cage spins, the force component of the transformed wrench remains constant in the world frame because it is a translational quantity and independent of rotational motion. However, the torque component changes since torque depends on the relative position of the force application point, which varies with the cage's rotation. This happens due to the cross-product relationship between the force vector and the position vector.
+
+
+------
+
+Exercise 2 
+a.8) No, the t2_temp.py script is not a ROS node. It doesn't use any ROS 2-specific features like initializing ROS with rclpy.init() or defining a node using rclpy.node.Node. A proper ROS node would also need to use publishers, subscribers, or services to communicate within the ROS ecosystem. Without those ROS-specific elements, it can't really interact with other ROS nodes or the ROS system.

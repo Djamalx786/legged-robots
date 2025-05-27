@@ -5,6 +5,7 @@ import pinocchio as pin
 import numpy as np
 from geometry_msgs.msg import TransformStamped
 from geometry_msgs.msg import TwistStamped
+from geometry_msgs.msg import WrenchStamped
 from tf2_ros import TransformBroadcaster, StaticTransformBroadcaster
 from visualization_msgs.msg import Marker
 
@@ -33,11 +34,17 @@ class CageNode(Node):
         self.get_logger().info('Twist publisher initialized')
         
         # Spatial wrench vector
-        force = np.array([0.3, 1.2, 1.0])
-        torque = np.array([0.2, 0.3, 0.6])
+        force = np.array([0.3, -1.2, 1.0])
+        torque = np.array([0.2, -0.3, 0.6])
         self.cW = pin.Force(force, torque)
-        self.wrench_pub = self.create_publisher(TwistStamped, 'cage_wrench', 10)
+        self.wrench_pub = self.create_publisher(WrenchStamped, 'cage_wrench', 10)
         self.get_logger().info('Wrench vector initialized')
+
+        # Publish further wrenches 
+        self.c2_wrench_pub = self.create_publisher(WrenchStamped, 'c2_wrench', 10)
+        self.wrench_world_pub = self.create_publisher(WrenchStamped, 'world_wrench', 10)
+        self.world_wrench_pin_pub = self.create_publisher(WrenchStamped, 'world_wrench_pin', 10)
+        self.c2_wrench_pin_pub = self.create_publisher(WrenchStamped, 'c2_wrench_pin', 10)
         # Publish twist vectors in world frame + transform to cage corner 2 
         self.world_twist_pub = self.create_publisher(TwistStamped, 'world_twist', 10)
         self.world_twist_pin_pub = self.create_publisher(TwistStamped, 'world_twist_pin', 10)
@@ -152,14 +159,17 @@ class CageNode(Node):
     
     def publish_transforms(self):
         now = self.get_clock().now()
-        #self.get_logger().info('publish_transforms called')
         dt = (now - self.last_time).nanoseconds * 1e-9
         self.last_time = now
 
         # Transform cV to the world frame using pinocchio.SE3.action
         cV_motion = pin.Motion(self.cV) 
         world_twist_pin = self.cage_center_transform.act(cV_motion)
-        
+
+        # Transform cW to the world frame using pinocchio.SE3.action
+        cW_force = pin.Force(self.cW)
+        world_wrench_pin = self.cage_center_transform.act(cW_force)
+
         # Update cage_center pose
         if self.method == 'lecture':
             self.cage_center_transform.translation += self.linear_vel_world * dt
@@ -221,7 +231,9 @@ class CageNode(Node):
         world_marker.pose.position.z = float(world_point.translation[2])
         world_marker.frame_locked = True
         self.world_marker_pub.publish(world_marker)
+    
         
+
         # Publish Spatial Twist
         twist_msg = TwistStamped()
         twist_msg.header.stamp = now.to_msg()
@@ -233,18 +245,6 @@ class CageNode(Node):
         twist_msg.twist.linear.y = float(self.cV.linear[1])
         twist_msg.twist.linear.z = float(self.cV.linear[2])
         self.twist_pub.publish(twist_msg)
-
-        # Publish Spatial Wrench
-        wrench_msg = TwistStamped()
-        wrench_msg.header.stamp = now.to_msg()
-        wrench_msg.header.frame_id = 'cage_corner_3'
-        wrench_msg.twist.angular.x = float(self.cW.angular[0])
-        wrench_msg.twist.angular.y = float(self.cW.angular[1])
-        wrench_msg.twist.angular.z = float(self.cW.angular[2])
-        wrench_msg.twist.linear.x = float(self.cW.linear[0])
-        wrench_msg.twist.linear.y = float(self.cW.linear[1])
-        wrench_msg.twist.linear.z = float(self.cW.linear[2])
-        self.wrench_pub.publish(wrench_msg)
 
 
         # Calculate Transformation of cage_corner 6
@@ -316,6 +316,66 @@ class CageNode(Node):
         c2_twist_pin_msg.twist.linear.z = float(c2_twist_pin.linear[2])
         self.c2_twist_pin_pub.publish(c2_twist_pin_msg)
         
+        # Publish Spatial Wrench
+        wrench_msg = WrenchStamped()
+        wrench_msg.header.stamp = now.to_msg()
+        wrench_msg.header.frame_id = 'cage_corner_3'
+        wrench_msg.wrench.torque.x = float(self.cW.angular[0])
+        wrench_msg.wrench.torque.y = float(self.cW.angular[1])
+        wrench_msg.wrench.torque.z = float(self.cW.angular[2])
+        wrench_msg.wrench.force.x = float(self.cW.linear[0])
+        wrench_msg.wrench.force.y = float(self.cW.linear[1])
+        wrench_msg.wrench.force.z = float(self.cW.linear[2])
+        self.wrench_pub.publish(wrench_msg)
+
+        corner_transform_3 = self.transforms[3]  # Transform von cage_corner_3 zu cage_center
+        cage_to_world_transform = self.cage_center_transform  # Transform von cage_center zu world
+
+        # Verkette die Transformationen
+        corner_to_world_transform = cage_to_world_transform * corner_transform_3
+
+        # Extrahiere Rotation und Translation
+        R_corner_to_world = corner_to_world_transform.rotation
+        p_corner_to_world = corner_to_world_transform.translation
+
+        # Wende die Wrench-Transformation an
+        world_wrench = self.wrench_coordinate_transformation(self.cW.vector, R_corner_to_world, p_corner_to_world)
+
+        # Publish the transformed wrench
+        world_wrench_msg = WrenchStamped()
+        world_wrench_msg.header.stamp = now.to_msg()
+        world_wrench_msg.header.frame_id = 'world'
+        world_wrench_msg.wrench.torque.x = float(world_wrench[0])
+        world_wrench_msg.wrench.torque.y = float(world_wrench[1])
+        world_wrench_msg.wrench.torque.z = float(world_wrench[2])
+        world_wrench_msg.wrench.force.x = float(world_wrench[3])
+        world_wrench_msg.wrench.force.y = float(world_wrench[4])
+        world_wrench_msg.wrench.force.z = float(world_wrench[5])
+        self.wrench_world_pub.publish(world_wrench_msg)
+        # Transform world wrench (wW) to cage_center + cage_corner_2
+        corner_transform_2 = self.transforms[2]
+        world_to_cage_transform = self.cage_center_transform.inverse()  # Transform von world zu cage_center
+        world_to_corner_2_transform = corner_transform_2 * world_to_cage_transform
+
+        # Extrahiere Rotation und Translation
+        R_2 = world_to_corner_2_transform.rotation
+        p_2 = world_to_corner_2_transform.translation
+
+        # Wende die Wrench-Transformation an
+        c2_wrench = self.wrench_coordinate_transformation(self.cW.vector, R_2, p_2)
+
+        # Publish the transformed wrench (c2W)
+        c2_wrench_msg = WrenchStamped()
+        c2_wrench_msg.header.stamp = now.to_msg()
+        c2_wrench_msg.header.frame_id = 'cage_corner_2'
+        c2_wrench_msg.wrench.torque.x = float(c2_wrench[0])
+        c2_wrench_msg.wrench.torque.y = float(c2_wrench[1])
+        c2_wrench_msg.wrench.torque.z = float(c2_wrench[2])
+        c2_wrench_msg.wrench.force.x = float(c2_wrench[3])
+        c2_wrench_msg.wrench.force.y = float(c2_wrench[4])
+        c2_wrench_msg.wrench.force.z = float(c2_wrench[5])
+        self.c2_wrench_pub.publish(c2_wrench_msg)
+
         #self.get_logger().info(f'R_6: {R_6}')
         #self.get_logger().info(f'p_6: {p_6}')
         #self.get_logger().info(f'Skew matrix of p_6: {pin.skew(p_6)}')
@@ -336,6 +396,21 @@ class CageNode(Node):
         Ad[3:, 3:] = R
         #self.get_logger().info(f'Adjoint Matrix: {Ad}')
         return Ad @ V
+
+    def wrench_coordinate_transformation(self, W, R, p):
+        """
+        Transform a spatial wrench vector using the adjoint transformation matrix.
+
+        W: Spatial Wrench Vector (6x1)
+        R: Rotation Matrix (3x3)
+        p: Translation Vector (3x1)
+        """
+        # Build adjoint transpose blocks for wrench transformation
+        AdT = np.zeros((6, 6))
+        AdT[:3, :3] = R.T
+        AdT[3:, :3] = pin.skew(p) @ R.T
+        AdT[3:, 3:] = R.T
+        return AdT @ W
 
              
 

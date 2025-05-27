@@ -1,0 +1,2 @@
+[console_scripts]
+t2_temp = bullet_sims.t2_temp:main
