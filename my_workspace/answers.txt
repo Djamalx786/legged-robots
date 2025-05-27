@@ -1,0 +1,4 @@
+Homework Solutions 
+
+Exercise 1. 
+b.8) When the cage spins, the force component of the transformed wrench remains constant in the world frame because it is a translational quantity and independent of rotational motion. However, the torque component changes since torque depends on the relative position of the force application point, which varies with the cage's rotation. This happens due to the cross-product relationship between the force vector and the position vector.
