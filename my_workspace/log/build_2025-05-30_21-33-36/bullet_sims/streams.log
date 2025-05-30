@@ -1,0 +1,28 @@
+[1.329s] Invoking command in '/workspaces/workspaces/my_workspace/src/bullet_sims': AMENT_PREFIX_PATH=/workspaces/workspaces/my_workspace/install/simulator:/workspaces/workspaces/my_workspace/install/bullet_sims:/workspaces/workspaces/my_workspace/install/talos_description:/workspaces/workspaces/my_workspace/install/ros_visuals:/workspaces/workspaces/my_workspace/install/reemc_description:/opt/ros/rolling PYTHONPATH=/workspaces/workspaces/my_workspace/build/bullet_sims/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspaces/workspaces/my_workspace/install/bullet_sims/lib/python3.12/site-packages:/workspaces/workspaces/my_workspace/install/simulator/lib/python3.12/site-packages:/workspaces/workspaces/my_workspace/install/bullet_sims/lib/python3.12/site-packages:/workspaces/workspaces/my_workspace/install/ros_visuals/lib/python3.12/site-packages:/opt/openrobots/lib/python3.12/site-packages:/opt/openrobots/lib/python3.12/site-packages:/opt/ros/rolling/lib/python3.12/site-packages /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/bullet_sims build --build-base /workspaces/workspaces/my_workspace/build/bullet_sims/build install --record /workspaces/workspaces/my_workspace/build/bullet_sims/install.log --single-version-externally-managed install_data
+[1.765s] running egg_info
+[1.795s] writing ../../build/bullet_sims/bullet_sims.egg-info/PKG-INFO
+[1.795s] writing dependency_links to ../../build/bullet_sims/bullet_sims.egg-info/dependency_links.txt
+[1.795s] writing entry points to ../../build/bullet_sims/bullet_sims.egg-info/entry_points.txt
+[1.796s] writing requirements to ../../build/bullet_sims/bullet_sims.egg-info/requires.txt
+[1.796s] writing top-level names to ../../build/bullet_sims/bullet_sims.egg-info/top_level.txt
+[2.229s] writing manifest file '../../build/bullet_sims/bullet_sims.egg-info/SOURCES.txt'
+[2.229s] running build
+[2.229s] running build_py
+[2.230s] copying bullet_sims/t22.py -> /workspaces/workspaces/my_workspace/build/bullet_sims/build/lib/bullet_sims
+[2.231s] copying bullet_sims/t23.py -> /workspaces/workspaces/my_workspace/build/bullet_sims/build/lib/bullet_sims
+[2.232s] running install
+[2.256s] running install_lib
+[2.286s] copying /workspaces/workspaces/my_workspace/build/bullet_sims/build/lib/bullet_sims/t22.py -> /workspaces/workspaces/my_workspace/install/bullet_sims/lib/python3.12/site-packages/bullet_sims
+[2.287s] copying /workspaces/workspaces/my_workspace/build/bullet_sims/build/lib/bullet_sims/t23.py -> /workspaces/workspaces/my_workspace/install/bullet_sims/lib/python3.12/site-packages/bullet_sims
+[2.288s] byte-compiling /workspaces/workspaces/my_workspace/install/bullet_sims/lib/python3.12/site-packages/bullet_sims/t22.py to t22.cpython-312.pyc
+[2.290s] byte-compiling /workspaces/workspaces/my_workspace/install/bullet_sims/lib/python3.12/site-packages/bullet_sims/t23.py to t23.cpython-312.pyc
+[2.291s] running install_data
+[2.291s] running install_egg_info
+[2.316s] removing '/workspaces/workspaces/my_workspace/install/bullet_sims/lib/python3.12/site-packages/bullet_sims-0.0.0-py3.12.egg-info' (and everything under it)
+[2.317s] Copying ../../build/bullet_sims/bullet_sims.egg-info to /workspaces/workspaces/my_workspace/install/bullet_sims/lib/python3.12/site-packages/bullet_sims-0.0.0-py3.12.egg-info
+[2.318s] running install_scripts
+[2.525s] Installing t21 script to /workspaces/workspaces/my_workspace/install/bullet_sims/lib/bullet_sims
+[2.525s] Installing t22 script to /workspaces/workspaces/my_workspace/install/bullet_sims/lib/bullet_sims
+[2.526s] Installing t2_temp script to /workspaces/workspaces/my_workspace/install/bullet_sims/lib/bullet_sims
+[2.526s] writing list of installed files to '/workspaces/workspaces/my_workspace/build/bullet_sims/install.log'
+[2.586s] Invoked command in '/workspaces/workspaces/my_workspace/src/bullet_sims' returned '0': AMENT_PREFIX_PATH=/workspaces/workspaces/my_workspace/install/simulator:/workspaces/workspaces/my_workspace/install/bullet_sims:/workspaces/workspaces/my_workspace/install/talos_description:/workspaces/workspaces/my_workspace/install/ros_visuals:/workspaces/workspaces/my_workspace/install/reemc_description:/opt/ros/rolling PYTHONPATH=/workspaces/workspaces/my_workspace/build/bullet_sims/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspaces/workspaces/my_workspace/install/bullet_sims/lib/python3.12/site-packages:/workspaces/workspaces/my_workspace/install/simulator/lib/python3.12/site-packages:/workspaces/workspaces/my_workspace/install/bullet_sims/lib/python3.12/site-packages:/workspaces/workspaces/my_workspace/install/ros_visuals/lib/python3.12/site-packages:/opt/openrobots/lib/python3.12/site-packages:/opt/openrobots/lib/python3.12/site-packages:/opt/ros/rolling/lib/python3.12/site-packages /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/bullet_sims build --build-base /workspaces/workspaces/my_workspace/build/bullet_sims/build install --record /workspaces/workspaces/my_workspace/build/bullet_sims/install.log --single-version-externally-managed install_data

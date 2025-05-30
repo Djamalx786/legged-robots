@@ -62,7 +62,13 @@ robot = Robot(simulator,            # The Pybullet wrapper
               q=q_home,             # Initial state
               useFixedBase=False,   # Fixed base or not
               verbose=True)         # Printout details
+data = robot._model.createData()
 
+M = pin.ccrba(robot._model, data, robot._q, robot._v)  # Compute the mass matrix at home position
+print("Mass-Inertia matrix at home position:\n", M)
+
+b = pin.nonLinearEffects(robot._model , data, robot._q , robot._v)  # Compute the non-linear effects at home position
+print("Non-linear effects at home position:\n", b)
 #Needed for compatibility
 simulator.addLinkDebugFrame(-1,-1)
 
