@@ -1,0 +1,125 @@
+[0.057s] Invoking command in '/workspaces/workspaces/my_workspace/build/reemc_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspaces/workspaces/my_workspace/install/bullet_sims:/workspaces/workspaces/my_workspace/install/simulator:/workspaces/workspaces/my_workspace/install/ros_visuals:/opt/ros/rolling /usr/bin/cmake /workspaces/workspaces/my_workspace/src/reemc_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/workspaces/workspaces/my_workspace/install/reemc_description
+[0.476s] -- The C compiler identification is GNU 13.3.0
+[0.511s] -- The CXX compiler identification is GNU 13.3.0
+[0.575s] -- Detecting C compiler ABI info
+[0.795s] -- Detecting C compiler ABI info - done
+[0.810s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.811s] -- Detecting C compile features
+[0.813s] -- Detecting C compile features - done
+[0.837s] -- Detecting CXX compiler ABI info
+[1.111s] -- Detecting CXX compiler ABI info - done
+[1.136s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.137s] -- Detecting CXX compile features
+[1.139s] -- Detecting CXX compile features - done
+[1.175s] -- Found ament_cmake: 2.7.2 (/opt/ros/rolling/share/ament_cmake/cmake)
+[1.523s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[1.689s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[1.852s] -- Found ament_lint_auto: 0.19.1 (/opt/ros/rolling/share/ament_lint_auto/cmake)
+[2.066s] -- Configuring done (2.0s)
+[2.079s] -- Generating done (0.0s)
+[2.085s] -- Build files have been written to: /workspaces/workspaces/my_workspace/build/reemc_description
+[2.108s] Invoked command in '/workspaces/workspaces/my_workspace/build/reemc_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspaces/workspaces/my_workspace/install/bullet_sims:/workspaces/workspaces/my_workspace/install/simulator:/workspaces/workspaces/my_workspace/install/ros_visuals:/opt/ros/rolling /usr/bin/cmake /workspaces/workspaces/my_workspace/src/reemc_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/workspaces/workspaces/my_workspace/install/reemc_description
+[2.111s] Invoking command in '/workspaces/workspaces/my_workspace/build/reemc_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspaces/workspaces/my_workspace/install/bullet_sims:/workspaces/workspaces/my_workspace/install/simulator:/workspaces/workspaces/my_workspace/install/ros_visuals:/opt/ros/rolling /usr/bin/cmake --build /workspaces/workspaces/my_workspace/build/reemc_description -- -j8 -l8
+[2.202s] Invoked command in '/workspaces/workspaces/my_workspace/build/reemc_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspaces/workspaces/my_workspace/install/bullet_sims:/workspaces/workspaces/my_workspace/install/simulator:/workspaces/workspaces/my_workspace/install/ros_visuals:/opt/ros/rolling /usr/bin/cmake --build /workspaces/workspaces/my_workspace/build/reemc_description -- -j8 -l8
+[2.225s] Invoking command in '/workspaces/workspaces/my_workspace/build/reemc_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspaces/workspaces/my_workspace/install/bullet_sims:/workspaces/workspaces/my_workspace/install/simulator:/workspaces/workspaces/my_workspace/install/ros_visuals:/opt/ros/rolling /usr/bin/cmake --install /workspaces/workspaces/my_workspace/build/reemc_description
+[2.241s] -- Install configuration: ""
+[2.242s] -- Execute custom install script
+[2.244s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_1.dae
+[2.264s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_1_collision.stl
+[2.283s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_1_color.png
+[2.302s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_1_normals.png
+[2.349s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_1_specular.png
+[2.370s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_2.dae
+[2.390s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_2_collision.stl
+[2.409s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_2_color.png
+[2.432s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_2_normals.png
+[2.472s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_2_specular.png
+[2.491s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_3.dae
+[2.511s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_3_collision.stl
+[2.533s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_3_color.png
+[2.552s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_3_normals.png
+[2.572s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_3_specular.png
+[2.590s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_4.dae
+[2.609s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_4_collision.stl
+[2.631s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_4_color.png
+[2.652s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_4_normals.png
+[2.672s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_4_specular.png
+[2.695s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_5.dae
+[2.722s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_5_collision.stl
+[2.743s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_6.dae
+[2.764s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_6_collision.stl
+[2.784s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_6_color.png
+[2.806s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_6_normals.png
+[2.830s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_6_specular.png
+[2.872s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/base/base.dae
+[2.892s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/base/base_collision.stl
+[2.913s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/chessboard/chessboard.dae
+[2.957s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/chessboard/chessboard.png
+[2.979s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/hand/hand_finger_1.dae
+[2.998s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/hand/hand_finger_1_collision.stl
+[3.022s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/hand/hand_finger_1_color.png
+[3.044s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/hand/hand_finger_1_normals.png
+[3.067s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/hand/hand_finger_1_specular.png
+[3.090s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/hand/hand_finger_2.dae
+[3.115s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/hand/hand_finger_2_collision.stl
+[3.158s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/hand/hand_finger_2_color.png
+[3.185s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/hand/hand_finger_2_normals.png
+[3.209s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/hand/hand_finger_2_specular.png
+[3.260s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/hand/hand_finger_3.dae
+[3.283s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/hand/hand_finger_3_collision.stl
+[3.306s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/hand/hand_finger_3_color.png
+[3.331s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/hand/hand_finger_3_normals.png
+[3.380s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/hand/hand_finger_3_specular.png
+[3.419s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/hand/hand_palm.dae
+[3.441s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/hand/hand_palm_collision.stl
+[3.486s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/hand/hand_palm_color.png
+[3.513s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/hand/hand_palm_normals.png
+[3.557s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/hand/hand_palm_specular.png
+[3.583s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/hand/hand_thumb.dae
+[3.615s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/hand/hand_thumb_collision.stl
+[3.643s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/hand/hand_thumb_color.png
+[3.673s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/hand/hand_thumb_normals.png
+[3.697s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/hand/hand_thumb_specular.png
+[3.724s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/head/head_1.dae
+[3.752s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/head/head_1_collision.stl
+[3.780s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/head/head_2_collision.stl
+[3.806s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/head/head_2_v0.dae
+[3.835s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/head/head_2_v1.stl
+[3.861s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/hey5/finger_abd_collision.stl
+[3.891s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/hey5/finger_flex_collision.stl
+[3.944s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/hey5/finger_flex_tip_collision.stl
+[3.971s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/hey5/palm.stl
+[3.997s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/hey5/palm_collision.stl
+[4.021s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/hey5/thumb_abd_collision.stl
+[4.049s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/kinect.dae
+[4.073s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/kinect.tga
+[4.096s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/leg/leg_1.dae
+[4.124s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/leg/leg_1_collision.stl
+[4.149s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/leg/leg_3.dae
+[4.170s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/leg/leg_3_collision.stl
+[4.192s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/leg/leg_4.dae
+[4.217s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/leg/leg_4_collision.stl
+[4.246s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/leg/leg_6.dae
+[4.267s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/leg/r_foot.dae
+[4.290s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/sensors/urg-04lx-ug01.stl
+[4.318s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/sensors/xtion_pro_live/xtion_pro_live.dae
+[4.365s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/sensors/xtion_pro_live/xtion_pro_live.png
+[4.387s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/torso/torso_2.dae
+[4.413s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/meshes/torso/torso_2_collision.stl
+[4.436s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/robots/reemc.urdf
+[4.459s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/ament_index/resource_index/package_run_dependencies/reemc_description
+[4.481s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/ament_index/resource_index/parent_prefix_path/reemc_description
+[4.503s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/environment/ament_prefix_path.sh
+[4.527s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/environment/ament_prefix_path.dsv
+[4.551s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/environment/path.sh
+[4.572s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/environment/path.dsv
+[4.593s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/local_setup.bash
+[4.622s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/local_setup.sh
+[4.644s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/local_setup.zsh
+[4.671s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/local_setup.dsv
+[4.693s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/package.dsv
+[4.715s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/ament_index/resource_index/packages/reemc_description
+[4.741s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/cmake/reemc_descriptionConfig.cmake
+[4.782s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/cmake/reemc_descriptionConfig-version.cmake
+[4.804s] -- Symlinking: /workspaces/workspaces/my_workspace/install/reemc_description/share/reemc_description/package.xml
+[4.858s] Invoked command in '/workspaces/workspaces/my_workspace/build/reemc_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspaces/workspaces/my_workspace/install/bullet_sims:/workspaces/workspaces/my_workspace/install/simulator:/workspaces/workspaces/my_workspace/install/ros_visuals:/opt/ros/rolling /usr/bin/cmake --install /workspaces/workspaces/my_workspace/build/reemc_description

@@ -84,10 +84,10 @@ pb.resetDebugVisualizerCamera(
 tau = q_actuated_home*0
 
 
-def spline_interpolation( model, q_init, q_home, duration, t): 
-        steps = int(duration / t)
+def spline_interpolation(model, q_init, q_home, duration, sim_rate): 
+        steps = int(duration * sim_rate)  # Calculation of steps
         trajectory = []
-        
+        print(f"Number of steps for spline interpolation: {steps}")
         for i in range(steps + 1):
             t = min(1.0, i / steps)
             q_i = pin.interpolate(model, q_init, q_home, t)
@@ -97,10 +97,11 @@ def spline_interpolation( model, q_init, q_home, duration, t):
 
 
 # Generate spline trajectory
-duration = 2.0  # seconds
-trajectory = spline_interpolation(robot._model, robot._q[7:39], q_home,duration, simulator._sim_dt)
-print(f"Diese Groesse will ich : ", np.shape(robot._model))
+duration = 10  # seconds
+print(f"simulator rate: {simulator._sim_rate}")
 
+trajectory = spline_interpolation(robot._model, robot._q, q_home, duration, simulator._sim_rate)
+print(f"Diese Groesse will ich : ", np.shape(robot._model))
 # Main simulation loop
 done = False
 step = 0
@@ -115,20 +116,22 @@ while not done:
     if step < len(trajectory):
         q_d = trajectory[step]
     else:
+        q_d = q_home
         done = True  # Exit the loop when the trajectory is complete
         break
 
     # Joint space controller
     K_p = np.zeros(32)
     K_d = np.zeros(32)
-    K_p[0:12] = 130  # legs
-    K_p[12:] = 30
-    K_d[0:12] = 10  # legs
-    K_d[12:] = 3
-    tau = K_p * (q_d - robot._q[7:39]) + K_d * (-robot._v[6:38])  # PD control law
+    K_p[0:12] = 1000  # Increase gains for legs
+    K_p[12:14] = 540  # Increase gains for torso
+    K_p[14:] = 50  # Increase gains for arms
+    K_d[0:12] = 13  # Increase derivative gains for legs
+    K_d[12:14] = 5  # Increase derivative gains for torso
+    K_d[14:] = 2  # Increase derivative gains for arms
+    tau = K_p * (q_d[7:39] - robot._q[7:39]) + K_d * (-robot._v[6:38])  # PD control law
 
     robot.setActuatedJointTorques(tau)
 
     step += 1  # Increment the step counter
 
-   

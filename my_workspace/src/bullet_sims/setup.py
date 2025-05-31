@@ -22,7 +22,8 @@ setup(
         'console_scripts': [
             't2_temp = bullet_sims.t2_temp:main',
             't21 = bullet_sims.t21:main',
-            't22 = bullet_sims.t22:main'
+            't22 = bullet_sims.t22:main',
+            't23 = bullet_sims.t23:main',
              ],
     },
 )
