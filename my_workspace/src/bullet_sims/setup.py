@@ -24,6 +24,7 @@ setup(
             't21 = bullet_sims.t21:main',
             't22 = bullet_sims.t22:main',
             't23 = bullet_sims.t23:main',
+            't3_main = bullet_sims.t3_main:main',
              ],
     },
 )

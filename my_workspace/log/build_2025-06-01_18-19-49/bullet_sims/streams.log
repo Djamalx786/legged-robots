@@ -1,0 +1,22 @@
+[2.706s] Invoking command in '/workspaces/workspaces/my_workspace/build/bullet_sims': AMENT_PREFIX_PATH=/workspaces/workspaces/my_workspace/install/simulator:/workspaces/workspaces/my_workspace/install/bullet_sims:/workspaces/workspaces/my_workspace/install/talos_description:/workspaces/workspaces/my_workspace/install/ros_visuals:/workspaces/workspaces/my_workspace/install/reemc_description:/opt/ros/rolling PYTHONPATH=/workspaces/workspaces/my_workspace/build/bullet_sims/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspaces/workspaces/my_workspace/install/bullet_sims/lib/python3.12/site-packages:/workspaces/workspaces/my_workspace/build/simulator:/workspaces/workspaces/my_workspace/install/simulator/lib/python3.12/site-packages:/workspaces/workspaces/my_workspace/build/bullet_sims:/workspaces/workspaces/my_workspace/install/bullet_sims/lib/python3.12/site-packages:/workspaces/workspaces/my_workspace/build/ros_visuals:/workspaces/workspaces/my_workspace/install/ros_visuals/lib/python3.12/site-packages:/opt/openrobots/lib/python3.12/site-packages:/opt/openrobots/lib/python3.12/site-packages:/opt/ros/rolling/lib/python3.12/site-packages /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /workspaces/workspaces/my_workspace/build/bullet_sims/build --no-deps symlink_data --force
+[3.472s] running develop
+[4.264s] running egg_info
+[4.356s] writing bullet_sims.egg-info/PKG-INFO
+[4.358s] writing dependency_links to bullet_sims.egg-info/dependency_links.txt
+[4.358s] writing entry points to bullet_sims.egg-info/entry_points.txt
+[4.359s] writing requirements to bullet_sims.egg-info/requires.txt
+[4.359s] writing top-level names to bullet_sims.egg-info/top_level.txt
+[5.319s] writing manifest file 'bullet_sims.egg-info/SOURCES.txt'
+[5.412s] running build_ext
+[5.412s] Creating /workspaces/workspaces/my_workspace/install/bullet_sims/lib/python3.12/site-packages/bullet-sims.egg-link (link to .)
+[5.414s] Installing t21 script to /workspaces/workspaces/my_workspace/install/bullet_sims/lib/bullet_sims
+[5.416s] Installing t22 script to /workspaces/workspaces/my_workspace/install/bullet_sims/lib/bullet_sims
+[5.416s] Installing t23 script to /workspaces/workspaces/my_workspace/install/bullet_sims/lib/bullet_sims
+[5.417s] Installing t2_temp script to /workspaces/workspaces/my_workspace/install/bullet_sims/lib/bullet_sims
+[5.417s] Installing t3_main script to /workspaces/workspaces/my_workspace/install/bullet_sims/lib/bullet_sims
+[5.418s] 
+[5.418s] Installed /workspaces/workspaces/my_workspace/build/bullet_sims
+[5.419s] running symlink_data
+[5.421s] symbolically linking /workspaces/workspaces/my_workspace/build/bullet_sims/resource/bullet_sims -> /workspaces/workspaces/my_workspace/install/bullet_sims/share/ament_index/resource_index/packages
+[5.421s] symbolically linking /workspaces/workspaces/my_workspace/build/bullet_sims/package.xml -> /workspaces/workspaces/my_workspace/install/bullet_sims/share/bullet_sims
+[5.538s] Invoked command in '/workspaces/workspaces/my_workspace/build/bullet_sims' returned '0': AMENT_PREFIX_PATH=/workspaces/workspaces/my_workspace/install/simulator:/workspaces/workspaces/my_workspace/install/bullet_sims:/workspaces/workspaces/my_workspace/install/talos_description:/workspaces/workspaces/my_workspace/install/ros_visuals:/workspaces/workspaces/my_workspace/install/reemc_description:/opt/ros/rolling PYTHONPATH=/workspaces/workspaces/my_workspace/build/bullet_sims/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspaces/workspaces/my_workspace/install/bullet_sims/lib/python3.12/site-packages:/workspaces/workspaces/my_workspace/build/simulator:/workspaces/workspaces/my_workspace/install/simulator/lib/python3.12/site-packages:/workspaces/workspaces/my_workspace/build/bullet_sims:/workspaces/workspaces/my_workspace/install/bullet_sims/lib/python3.12/site-packages:/workspaces/workspaces/my_workspace/build/ros_visuals:/workspaces/workspaces/my_workspace/install/ros_visuals/lib/python3.12/site-packages:/opt/openrobots/lib/python3.12/site-packages:/opt/openrobots/lib/python3.12/site-packages:/opt/ros/rolling/lib/python3.12/site-packages /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /workspaces/workspaces/my_workspace/build/bullet_sims/build --no-deps symlink_data --force

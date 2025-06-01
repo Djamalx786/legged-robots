@@ -1,0 +1,53 @@
+[2.590s] Invoking command in '/workspaces/workspaces/my_workspace/src/ros_visuals': PYTHONPATH=/workspaces/workspaces/my_workspace/build/ros_visuals/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspaces/workspaces/my_workspace/install/ros_visuals/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ros_visuals build --build-base /workspaces/workspaces/my_workspace/build/ros_visuals/build install --record /workspaces/workspaces/my_workspace/build/ros_visuals/install.log --single-version-externally-managed install_data
+[3.235s] running egg_info
+[3.236s] creating ../../build/ros_visuals/ros_visuals.egg-info
+[3.271s] writing ../../build/ros_visuals/ros_visuals.egg-info/PKG-INFO
+[3.272s] writing dependency_links to ../../build/ros_visuals/ros_visuals.egg-info/dependency_links.txt
+[3.272s] writing entry points to ../../build/ros_visuals/ros_visuals.egg-info/entry_points.txt
+[3.273s] writing requirements to ../../build/ros_visuals/ros_visuals.egg-info/requires.txt
+[3.273s] writing top-level names to ../../build/ros_visuals/ros_visuals.egg-info/top_level.txt
+[3.273s] writing manifest file '../../build/ros_visuals/ros_visuals.egg-info/SOURCES.txt'
+[3.851s] writing manifest file '../../build/ros_visuals/ros_visuals.egg-info/SOURCES.txt'
+[3.852s] running build
+[3.852s] running build_py
+[3.852s] creating /workspaces/workspaces/my_workspace/build/ros_visuals/build
+[3.853s] creating /workspaces/workspaces/my_workspace/build/ros_visuals/build/lib
+[3.853s] creating /workspaces/workspaces/my_workspace/build/ros_visuals/build/lib/ros_visuals
+[3.853s] copying ros_visuals/t12.py -> /workspaces/workspaces/my_workspace/build/ros_visuals/build/lib/ros_visuals
+[3.854s] copying ros_visuals/t13.py -> /workspaces/workspaces/my_workspace/build/ros_visuals/build/lib/ros_visuals
+[3.854s] copying ros_visuals/__init__.py -> /workspaces/workspaces/my_workspace/build/ros_visuals/build/lib/ros_visuals
+[3.855s] copying ros_visuals/t11.py -> /workspaces/workspaces/my_workspace/build/ros_visuals/build/lib/ros_visuals
+[3.855s] copying ros_visuals/pinocchio_test.py -> /workspaces/workspaces/my_workspace/build/ros_visuals/build/lib/ros_visuals
+[3.856s] running install
+[3.875s] running install_lib
+[3.927s] creating /workspaces/workspaces/my_workspace/install/ros_visuals/lib/python3.12/site-packages/ros_visuals
+[3.928s] copying /workspaces/workspaces/my_workspace/build/ros_visuals/build/lib/ros_visuals/t12.py -> /workspaces/workspaces/my_workspace/install/ros_visuals/lib/python3.12/site-packages/ros_visuals
+[3.928s] copying /workspaces/workspaces/my_workspace/build/ros_visuals/build/lib/ros_visuals/t13.py -> /workspaces/workspaces/my_workspace/install/ros_visuals/lib/python3.12/site-packages/ros_visuals
+[3.929s] copying /workspaces/workspaces/my_workspace/build/ros_visuals/build/lib/ros_visuals/__init__.py -> /workspaces/workspaces/my_workspace/install/ros_visuals/lib/python3.12/site-packages/ros_visuals
+[3.929s] copying /workspaces/workspaces/my_workspace/build/ros_visuals/build/lib/ros_visuals/t11.py -> /workspaces/workspaces/my_workspace/install/ros_visuals/lib/python3.12/site-packages/ros_visuals
+[3.929s] copying /workspaces/workspaces/my_workspace/build/ros_visuals/build/lib/ros_visuals/pinocchio_test.py -> /workspaces/workspaces/my_workspace/install/ros_visuals/lib/python3.12/site-packages/ros_visuals
+[3.930s] byte-compiling /workspaces/workspaces/my_workspace/install/ros_visuals/lib/python3.12/site-packages/ros_visuals/t12.py to t12.cpython-312.pyc
+[3.936s] byte-compiling /workspaces/workspaces/my_workspace/install/ros_visuals/lib/python3.12/site-packages/ros_visuals/t13.py to t13.cpython-312.pyc
+[3.942s] byte-compiling /workspaces/workspaces/my_workspace/install/ros_visuals/lib/python3.12/site-packages/ros_visuals/__init__.py to __init__.cpython-312.pyc
+[3.943s] byte-compiling /workspaces/workspaces/my_workspace/install/ros_visuals/lib/python3.12/site-packages/ros_visuals/t11.py to t11.cpython-312.pyc
+[3.945s] byte-compiling /workspaces/workspaces/my_workspace/install/ros_visuals/lib/python3.12/site-packages/ros_visuals/pinocchio_test.py to pinocchio_test.cpython-312.pyc
+[3.946s] running install_data
+[3.947s] copying package.xml -> /workspaces/workspaces/my_workspace/install/ros_visuals/share/ament_index/resource_index/packages
+[3.947s] creating /workspaces/workspaces/my_workspace/install/ros_visuals/share/ros_visuals/config
+[3.947s] copying config/compare_cage.rviz -> /workspaces/workspaces/my_workspace/install/ros_visuals/share/ros_visuals/config
+[3.948s] copying config/talos_new.rviz -> /workspaces/workspaces/my_workspace/install/ros_visuals/share/ros_visuals/config
+[3.948s] copying config/rviz_config.rviz -> /workspaces/workspaces/my_workspace/install/ros_visuals/share/ros_visuals/config
+[3.948s] copying config/talos.rviz -> /workspaces/workspaces/my_workspace/install/ros_visuals/share/ros_visuals/config
+[3.949s] creating /workspaces/workspaces/my_workspace/install/ros_visuals/share/ros_visuals/launch
+[3.949s] copying launch/talos_control_launch.py -> /workspaces/workspaces/my_workspace/install/ros_visuals/share/ros_visuals/launch
+[3.949s] copying launch/launch.py -> /workspaces/workspaces/my_workspace/install/ros_visuals/share/ros_visuals/launch
+[3.950s] copying launch/talos_rviz_launch.py -> /workspaces/workspaces/my_workspace/install/ros_visuals/share/ros_visuals/launch
+[3.950s] copying launch/compare_methods.launch.py -> /workspaces/workspaces/my_workspace/install/ros_visuals/share/ros_visuals/launch
+[3.950s] running install_egg_info
+[3.996s] Copying ../../build/ros_visuals/ros_visuals.egg-info to /workspaces/workspaces/my_workspace/install/ros_visuals/lib/python3.12/site-packages/ros_visuals-0.0.0-py3.12.egg-info
+[3.998s] running install_scripts
+[4.256s] Installing t11 script to /workspaces/workspaces/my_workspace/install/ros_visuals/lib/ros_visuals
+[4.257s] Installing t12 script to /workspaces/workspaces/my_workspace/install/ros_visuals/lib/ros_visuals
+[4.258s] Installing t13 script to /workspaces/workspaces/my_workspace/install/ros_visuals/lib/ros_visuals
+[4.259s] writing list of installed files to '/workspaces/workspaces/my_workspace/build/ros_visuals/install.log'
+[4.834s] Invoked command in '/workspaces/workspaces/my_workspace/src/ros_visuals' returned '0': PYTHONPATH=/workspaces/workspaces/my_workspace/build/ros_visuals/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspaces/workspaces/my_workspace/install/ros_visuals/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ros_visuals build --build-base /workspaces/workspaces/my_workspace/build/ros_visuals/build install --record /workspaces/workspaces/my_workspace/build/ros_visuals/install.log --single-version-externally-managed install_data

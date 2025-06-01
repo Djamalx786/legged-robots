@@ -25,6 +25,24 @@ class TalosSimulator(Node):
         # Paths for URDF and meshes
         self.urdf_path = "src/talos_description/robots/talos_reduced.urdf"
         self.mesh_path = "src/talos_description/meshes/../.."
+                
+        '''
+        Talos
+        0, 1, 2, 3, 4, 5, 			    # left leg
+        6, 7, 8, 9, 10, 11, 			# right leg
+        12, 13,                         # torso
+        14, 15, 16, 17, 18, 19, 20, 21  # left arm
+        22, 23, 24, 25, 26, 27, 28, 29  # right arm
+        30, 31                          # head
+
+        REEMC
+        0, 1, 2, 3, 4, 5, 			    # left leg
+        6, 7, 8, 9, 10, 11, 			# right leg
+        12, 13,                         # torso
+        14, 15, 16, 17, 18, 19, 20,     # left arm
+        21, 22, 23, 24, 25, 26, 27,     # right arm
+        28, 29                          # head
+        '''
 
         # Initialize robot configuration
         self._initialize_robot_configuration()
@@ -74,8 +92,6 @@ class TalosSimulator(Node):
 
     def _setup_controller(self):
         """Setup PD controller gains."""
-        base_kp = 300
-        base_kd = 0.5
         self.Kp_matrix = np.eye(32)
         self.Kd_matrix = np.eye(32)
 

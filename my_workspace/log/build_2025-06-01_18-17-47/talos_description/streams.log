@@ -1,0 +1,131 @@
+[0.458s] Invoking command in '/workspaces/workspaces/my_workspace/build/talos_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspaces/workspaces/my_workspace/install/bullet_sims:/workspaces/workspaces/my_workspace/install/simulator:/workspaces/workspaces/my_workspace/install/ros_visuals:/opt/ros/rolling /usr/bin/cmake /workspaces/workspaces/my_workspace/src/talos_description -DCMAKE_INSTALL_PREFIX=/workspaces/workspaces/my_workspace/install/talos_description
+[0.597s] -- The C compiler identification is GNU 13.3.0
+[0.777s] -- The CXX compiler identification is GNU 13.3.0
+[0.828s] -- Detecting C compiler ABI info
+[1.067s] -- Detecting C compiler ABI info - done
+[1.094s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.095s] -- Detecting C compile features
+[1.096s] -- Detecting C compile features - done
+[1.127s] -- Detecting CXX compiler ABI info
+[1.461s] -- Detecting CXX compiler ABI info - done
+[1.491s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.493s] -- Detecting CXX compile features
+[1.495s] -- Detecting CXX compile features - done
+[1.517s] -- Found ament_cmake: 2.7.2 (/opt/ros/rolling/share/ament_cmake/cmake)
+[2.072s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[2.474s] -- Found ament_lint_auto: 0.19.1 (/opt/ros/rolling/share/ament_lint_auto/cmake)
+[2.747s] -- Configuring done (2.3s)
+[2.758s] -- Generating done (0.0s)
+[2.763s] -- Build files have been written to: /workspaces/workspaces/my_workspace/build/talos_description
+[2.776s] Invoked command in '/workspaces/workspaces/my_workspace/build/talos_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspaces/workspaces/my_workspace/install/bullet_sims:/workspaces/workspaces/my_workspace/install/simulator:/workspaces/workspaces/my_workspace/install/ros_visuals:/opt/ros/rolling /usr/bin/cmake /workspaces/workspaces/my_workspace/src/talos_description -DCMAKE_INSTALL_PREFIX=/workspaces/workspaces/my_workspace/install/talos_description
+[2.783s] Invoking command in '/workspaces/workspaces/my_workspace/build/talos_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspaces/workspaces/my_workspace/install/bullet_sims:/workspaces/workspaces/my_workspace/install/simulator:/workspaces/workspaces/my_workspace/install/ros_visuals:/opt/ros/rolling /usr/bin/cmake --build /workspaces/workspaces/my_workspace/build/talos_description -- -j8 -l8
+[2.925s] Invoked command in '/workspaces/workspaces/my_workspace/build/talos_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspaces/workspaces/my_workspace/install/bullet_sims:/workspaces/workspaces/my_workspace/install/simulator:/workspaces/workspaces/my_workspace/install/ros_visuals:/opt/ros/rolling /usr/bin/cmake --build /workspaces/workspaces/my_workspace/build/talos_description -- -j8 -l8
+[2.927s] Invoking command in '/workspaces/workspaces/my_workspace/build/talos_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspaces/workspaces/my_workspace/install/bullet_sims:/workspaces/workspaces/my_workspace/install/simulator:/workspaces/workspaces/my_workspace/install/ros_visuals:/opt/ros/rolling /usr/bin/cmake --install /workspaces/workspaces/my_workspace/build/talos_description
+[2.951s] -- Install configuration: ""
+[2.951s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes
+[2.952s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/talos_dummy.stl
+[2.955s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/tibia_light.STL
+[2.956s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/marker.STL
+[2.957s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/femur_light.STL
+[2.957s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/bart.STL
+[2.968s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/head
+[2.969s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/head/head_2_default_collision.stl
+[2.969s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/head/head_1_collision.stl
+[2.970s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/head/head_2_default.stl
+[2.972s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/head/head_2_lidar.stl
+[2.973s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/head/head_2_collision.stl
+[2.973s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/head/head_2.stl
+[2.974s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/head/head_2_lidar_collision.stl
+[2.975s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/head/head_1.stl
+[2.976s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/super-simple-femur.STL
+[2.977s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/hipZ.STL
+[2.979s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/bart_light.STL
+[2.979s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/super-simple-bart.STL
+[2.980s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/hipZ_light.STL
+[2.981s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/sensors
+[2.981s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/sensors/xtion_pro_live
+[2.982s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/sensors/xtion_pro_live/xtion_pro_live.dae
+[2.984s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/sensors/xtion_pro_live/xtion_pro_live.png
+[2.984s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/sensors/orbbec
+[2.984s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/sensors/orbbec/orbbec.STL
+[2.989s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/sensors/ouster
+[2.989s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/sensors/ouster/os1_64.dae
+[2.990s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/femur.STL
+[2.994s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/arm
+[2.994s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/arm/arm_2.STL
+[2.996s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/arm/arm_7_collision.STL
+[2.996s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/arm/arm_7.STL
+[2.997s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/arm/arm_6.STL
+[2.998s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/arm/arm_4_collision.STL
+[2.999s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/arm/arm_5_collision.STL
+[2.999s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/arm/arm_2_collision.STL
+[3.000s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/arm/arm_1.STL
+[3.001s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/arm/arm_4.STL
+[3.003s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/arm/arm_5.STL
+[3.005s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/arm/arm_3_collision.STL
+[3.006s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/arm/arm_6_collision.STL
+[3.006s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/arm/arm_1_collision.STL
+[3.007s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/arm/arm_3.STL
+[3.009s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/super-simple-tibia.STL
+[3.009s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/foot.STL
+[3.022s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/dummy_hand.STL
+[3.023s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/torso
+[3.023s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/torso/base_link.STL
+[3.024s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/torso/torso_1.STL
+[3.024s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/torso/torso_2_collision.STL
+[3.025s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/torso/torso_2.STL
+[3.027s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/torso/base_link_collision.STL
+[3.028s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/marker_head.STL
+[3.028s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/v2
+[3.029s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/v2/base_link_lo_res.stl
+[3.029s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/v2/knee_lo_res.stl
+[3.030s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/v2/ankle_X_collision.stl
+[3.030s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/v2/hip_y_lo_res.stl
+[3.031s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/v2/ankle_Y_lo_res.stl
+[3.031s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/v2/ankle_X_lo_res.stl
+[3.032s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/v2/base_link_collision.stl
+[3.033s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/v2/hip_y_collision.stl
+[3.033s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/v2/ankle_Y_collision.stl
+[3.033s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/v2/hip_x_collision.stl
+[3.033s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/v2/knee_collision.stl
+[3.034s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/v2/hip_x_lo_res.stl
+[3.034s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/v2/hip_z_collision.stl
+[3.035s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/v2/hip_z_lo_res.stl
+[3.036s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/tibia.STL
+[3.044s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/gripper
+[3.045s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/gripper/fingertip.STL
+[3.045s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/gripper/gripper_tweezers.STL
+[3.046s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/gripper/gripper_motor_single.STL
+[3.047s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/gripper/gripper_tweezers_collision.STL
+[3.047s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/gripper/gripper_motor_double_collision.STL
+[3.048s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/gripper/base_link.STL
+[3.049s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/gripper/gripper_motor_double.STL
+[3.049s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/gripper/gripper_motor_single_collision.STL
+[3.049s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/gripper/inner_single.STL
+[3.050s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/gripper/gripper_simple_collision.STL
+[3.050s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/gripper/fingertip_collision.STL
+[3.051s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/gripper/base_link_collision.STL
+[3.051s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/gripper/inner_single_collision.STL
+[3.051s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/gripper/gripper_simple.STL
+[3.053s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/gripper/inner_double.STL
+[3.053s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/meshes/gripper/inner_double_collision.STL
+[3.054s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/robots
+[3.054s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/robots/talos.urdf
+[3.055s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/robots/talos_reduced.urdf
+[3.055s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/robots/talos_reduced_no_hands.urdf
+[3.056s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/ament_index/resource_index/package_run_dependencies/talos_description
+[3.057s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/ament_index/resource_index/parent_prefix_path/talos_description
+[3.057s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/environment/ament_prefix_path.sh
+[3.058s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/environment/ament_prefix_path.dsv
+[3.058s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/environment/path.sh
+[3.059s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/environment/path.dsv
+[3.059s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/local_setup.bash
+[3.060s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/local_setup.sh
+[3.060s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/local_setup.zsh
+[3.060s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/local_setup.dsv
+[3.061s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/package.dsv
+[3.061s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/ament_index/resource_index/packages/talos_description
+[3.062s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/cmake/talos_descriptionConfig.cmake
+[3.062s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/cmake/talos_descriptionConfig-version.cmake
+[3.063s] -- Installing: /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/package.xml
+[3.067s] Invoked command in '/workspaces/workspaces/my_workspace/build/talos_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspaces/workspaces/my_workspace/install/bullet_sims:/workspaces/workspaces/my_workspace/install/simulator:/workspaces/workspaces/my_workspace/install/ros_visuals:/opt/ros/rolling /usr/bin/cmake --install /workspaces/workspaces/my_workspace/build/talos_description
