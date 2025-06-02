@@ -5,6 +5,7 @@ package.xml
 setup.cfg
 setup.py
 bullet_sims/__init__.py
+bullet_sims/debug_joints.py
 bullet_sims/t21.py
 bullet_sims/t22.py
 bullet_sims/t23.py
@@ -23,6 +24,7 @@ bullet_sims/__pycache__/t21.cpython-312.pyc
 bullet_sims/__pycache__/t22.cpython-312.pyc
 bullet_sims/__pycache__/t23.cpython-312.pyc
 bullet_sims/__pycache__/t2_temp.cpython-312.pyc
+bullet_sims/__pycache__/t3_main.cpython-312.pyc
 prefix_override/sitecustomize.py
 prefix_override/__pycache__/sitecustomize.cpython-312.pyc
 resource/bullet_sims

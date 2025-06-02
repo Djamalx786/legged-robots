@@ -1,4 +1,5 @@
 [console_scripts]
+interactive_marker_hand = bullet_sims.interactive_marker_hand:main
 t21 = bullet_sims.t21:main
 t22 = bullet_sims.t22:main
 t23 = bullet_sims.t23:main
