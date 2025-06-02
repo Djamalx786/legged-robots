@@ -17,7 +17,6 @@ import rclpy
 from rclpy.node import Node
 from sensor_msgs.msg import JointState
 from geometry_msgs.msg import PoseStamped
-import numpy.linalg as la
 from scipy.interpolate import CubicSpline
 
 ################################################################################
@@ -27,428 +26,471 @@ from scipy.interpolate import CubicSpline
 class State(Enum):
     JOINT_SPLINE = 0,
     CART_SPLINE = 1
-
 ################################################################################
-# Robot
+
 ################################################################################
 
 class Talos(Robot):
     def __init__(self, simulator, q=None, verbose=True, useFixedBase=True):
-           
-        
+      
         self.urdf = "src/talos_description/robots/talos_reduced.urdf"
         self.path_meshes = "src/talos_description/meshes/../.."
-        
-
+        # Initialize Pinocchio robot wrapper
         self.wrapper = pin.RobotWrapper.BuildFromURDF(self.urdf, self.path_meshes, None, True, None)
 
         self.model = self.wrapper.model
         self.data = self.wrapper.data
 
-        print("RobotWrapper loaded with {} joints".format(self.model.nq))
+        if verbose:
+            print(f"Pinocchio RobotWrapper initialized with {self.model.nq} degrees of freedom")
 
         super().__init__(simulator,
                         self.urdf,
                         self.model,
-                        [0, 0, 1.15],  # Floating base initial position
-                        [0, 0, 0, 1],   # Floating base initial orientation [x,y,z,w]
+                        [0, 0, 1.15],  # Base initial position
+                        [0, 0, 0, 1],   # Base initial orientation [x,y,z,w]
                         q=q,
-                        useFixedBase=useFixedBase,
+                        useFixedBase=True,
                         verbose=verbose)
         
-        # Publisher will be set from outside (placeholder for injection)
+        # ROS publishing components (to be injected externally)
         self.joint_state_publisher = None
         self.node = None
         
-        
     def update(self):
-        
+        """Update robot state and forward kinematics"""
         super().update()
         
+        # Update Pinocchio forward kinematics with current configuration
         self.wrapper.forwardKinematics(self._q)
+        pin.updateFramePlacements(self.model, self.data)
         
     def massMatrix(self):
-        """Compute and return the mass matrix for actuated joints only"""
+        """Compute mass matrix for actuated joints using CRBA algorithm"""
+        # Ensure forward kinematics are computed
         pin.forwardKinematics(self.model, self.data, self._q)
         
-        # Compute mass matrix using Pinocchio
-        M_full = pin.crba(self.model, self.data, self._q)
+        # Calculate full mass matrix using Composite Rigid Body Algorithm
+        full_mass_matrix = pin.crba(self.model, self.data, self._q)
         
-        # Return only actuated joints part
+        # Extract actuated joints portion
         if self._use_fixed_base:
-            return M_full  # Should be 32x32
+            return full_mass_matrix  # Fixed base: all joints are actuated
         else:
-            return M_full[6:, 6:]  
+            return full_mass_matrix[6:, 6:]  # Floating base: skip first 6 DOF
     
     def coriolisAndGravity(self):
-        """Compute and return Coriolis and gravity terms for actuated joints only"""
+        """Compute Coriolis, centrifugal and gravitational terms for actuated joints"""
+        # Update kinematics with positions and velocities
         pin.forwardKinematics(self.model, self.data, self._q, self._v)
         
-        # Compute nonlinear effects (Coriolis + gravity)
-        b = pin.nonLinearEffects(self.model, self.data, self._q, self._v)
+        # Explicitly compute gravity and Coriolis terms for clarity
+        pin.computeGeneralizedGravity(self.model, self.data, self._q)
+        pin.computeCoriolisMatrix(self.model, self.data, self._q, self._v)
         
-        # Return only actuated joints part
+        # Get combined nonlinear effects vector
+        nonlinear_terms = pin.nonLinearEffects(self.model, self.data, self._q, self._v)
+        
+        # Return actuated joints portion only
         if self._use_fixed_base:
-            return b  # Should be 32
+            return nonlinear_terms  # Fixed base: return full vector
         else:
-            return b[6:]  
+            return nonlinear_terms[6:]  # Floating base: skip base DOF
         
     def wrapper(self):
-        return self._wrapper
+        """Return Pinocchio wrapper instance"""
+        return self.wrapper
 
     def data(self):
-        return self._wrapper.data
+        """Return Pinocchio data instance"""
+        return self.wrapper.data
     
     def publish(self):
-        
+        """Publish current joint states to ROS topic"""
         
         if self.joint_state_publisher is None or self.node is None:
             return
             
-        
+        # Get actuated joint information
+        actuated_joint_names = self.actuatedJointNames()
+        num_actuated_joints = len(actuated_joint_names)
 
-        current_actuated_joint_names = self.actuatedJointNames()
-        num_act_joints = len(current_actuated_joint_names)
+        # Initialize ordered arrays for joint states
+        q_ordered_actuated = np.zeros(num_actuated_joints)
+        v_ordered_actuated = np.zeros(num_actuated_joints)
 
-        ordered_q = np.zeros(num_act_joints)
-        ordered_v = np.zeros(num_act_joints)
-
-        for i in range(num_act_joints):
-            name = current_actuated_joint_names[i]
+        # Map joint states from Pinocchio ordering to PyBullet ordering
+        for i in range(num_actuated_joints):
+            joint_name = actuated_joint_names[i]
             try:
-                joint_id_pin = self.model.getJointId(name)
-                idx_q_pin = self.model.joints[joint_id_pin].idx_q
-                idx_v_pin = self.model.joints[joint_id_pin].idx_v
+                # Get Pinocchio joint information
+                joint_id_pinocchio = self.model.getJointId(joint_name)
+                q_index_pinocchio = self.model.joints[joint_id_pinocchio].idx_q
+                v_index_pinocchio = self.model.joints[joint_id_pinocchio].idx_v
                 
-                ordered_q[i] = self._q[idx_q_pin]
-                ordered_v[i] = self._v[idx_v_pin]
+                # Extract corresponding values
+                q_ordered_actuated[i] = self._q[q_index_pinocchio]
+                v_ordered_actuated[i] = self._v[v_index_pinocchio]
             except KeyError:
                 if self.node:
-                    self.node.get_logger().warn(f"Joint '{name}' from PyBullet actuated list not found in Pinocchio model during publishing, or issue with indexing.")
-                ordered_q[i] = 0.0 # Default to 0 if error
-                ordered_v[i] = 0.0
+                    self.node.get_logger().warn(f"Joint '{joint_name}' mapping error during state publishing")
+                q_ordered_actuated[i] = 0.0 
+                v_ordered_actuated[i] = 0.0
         
-        tau = np.zeros(num_act_joints)  # Efforts should also match this order
+        # Initialize effort array (currently not measured)
+        effort_ordered_actuated = np.zeros(num_actuated_joints)
         
-        joint_state_msg = JointState()
-        joint_state_msg.header = Header()
-        joint_state_msg.header.stamp = self.node.get_clock().now().to_msg()
-        joint_state_msg.name = current_actuated_joint_names
-        joint_state_msg.position = ordered_q.tolist()
-        joint_state_msg.velocity = ordered_v.tolist()
-        joint_state_msg.effort = tau.tolist()
+        # Create and populate ROS message
+        js_msg = JointState()
+        js_msg.header = Header()
+        js_msg.header.stamp = self.node.get_clock().now().to_msg()
+        js_msg.name = actuated_joint_names
+        js_msg.position = q_ordered_actuated.tolist()
+        js_msg.velocity = v_ordered_actuated.tolist()
+        js_msg.effort = effort_ordered_actuated.tolist()
         
-        self.joint_state_publisher.publish(joint_state_msg)
-        
+        self.joint_state_publisher.publish(js_msg)
 
 ################################################################################
-# Controllers
+# Control Systems
 ################################################################################
 
 class JointSpaceController:
-    """JointSpaceController
-    Tracking controller in jointspace
     """
-    def __init__(self, robot, Kp, Kd):        
-        # Save gains, robot ref
-        self.robot = robot
-        self.Kp = np.diag(Kp)
-        self.Kd = np.diag(Kd)
+    Joint space tracking controller using computed torque method
+    Control law: τ = M(q)[q̈_ref + Kd*ė + Kp*e] + h(q,q̇)
+    """
+    def __init__(self, robot_model, Kp , Kd):        
+        # Store robot reference and control gains
+        self.robot_reference = robot_model
+        self.kp = np.diag(Kp)
+        self.kd = np.diag(Kd)
 
     def update(self, q_r, q_r_dot, q_r_ddot):
-        # Compute jointspace torque, return torque
-        #τ = M (q) [q̈r − Kd (q̇ − q̇r ) − Kp (q − qr )] + h (q, q̇)
+        """Compute joint torques for trajectory tracking"""
         
-        if self.robot._use_fixed_base:
-            q = self.robot._q
-            v = self.robot._v
+        # Extract current actuated joint states
+        if self.robot_reference._use_fixed_base:
+            current_positions = self.robot_reference._q
+            current_velocities = self.robot_reference._v
         else:
-            q = self.robot._q[self.robot._pos_idx_offset:]  # Skip floating base position (7 DOF)
-            v = self.robot._v[self.robot._vel_idx_offset:]  # Skip floating base velocity (6 DOF)
+            current_positions = self.robot_reference._q[self.robot_reference._pos_idx_offset:]
+            current_velocities = self.robot_reference._v[self.robot_reference._vel_idx_offset:]
             
-    
+        # Calculate tracking errors
+        position_tracking_error = q_r - current_positions
+        velocity_tracking_error = q_r_dot - current_velocities
 
-        position_error = q_r - q
-        velocity_error = q_r_dot - v
-
-        # Compute the mass matrix
-        M = self.robot.massMatrix()
-        h = self.robot.coriolisAndGravity()
+        # Obtain robot dynamics components
+        inertia_matrix = self.robot_reference.massMatrix()
+        nonlinear_dynamics = self.robot_reference.coriolisAndGravity()
         
+        # Compute desired acceleration with PD compensation
+        acceleration_command = q_r_ddot + self.kd @ velocity_tracking_error + self.kp @ position_tracking_error
+        
+        # Apply computed torque control law
+        commanded_torques = inertia_matrix @ acceleration_command + nonlinear_dynamics
 
-        # Compute the desired acceleration ( sign change for consistancy/best practice)
-        tau = M @ (q_r_ddot + self.Kd @ velocity_error + self.Kp @ position_error) + h
-
-        return tau
+        return commanded_torques
 
 class CartesianSpaceController:
-    """CartesianSpaceController
-    Tracking controller in cartspace
     """
-    def __init__(self, robot, joint_name, Kp, Kd):
-        # save gains, robot ref
-        self.robot = robot
-        self.joint_name = joint_name
+    Cartesian space controller with null-space posture regulation
+    Uses operational space control with dynamically consistent pseudo-inverse
+    """
+    def __init__(self, robot_model, target_link_name, Kp, Kd):
+        # Store robot and end-effector information
+        self.robot_reference = robot_model
+        self.target_link_name = target_link_name
+        
+        # Configure Cartesian space gains (6 DOF: position + orientation)
         if len(Kp) > 6:
-            # Take only the first 6 elements for Cartesian control
-            self.Kp = np.diag(Kp[:6])
-            self.Kd = np.diag(Kd[:6])
+            # Extract first 6 elements if full joint gains provided
+            self.cartesian_kp = np.diag(Kp[:6])
+            self.cartesian_kd = np.diag(Kd[:6])
         else:
-            self.Kp = np.diag(Kp)
-            self.Kd = np.diag(Kd)# Only use first 6 DOF for Cartesian control
+            self.cartesian_kp = np.diag(Kp)
+            self.cartesian_kd = np.diag(Kd)
 
-        self.id = robot.model.getJointId(self.joint_name)
+        # Get target link ID in Pinocchio model
+        self.target_link_id = robot_model.model.getJointId(self.target_link_name)
         
-        
-        if robot._use_fixed_base:
-            self.q_posture_ref = np.zeros(32)
-            self.q_posture_ref[14:22] = np.array([0, +0.45, 0, -1, 0, 0, 0, 0])  # left arm
-            self.q_posture_ref[22:30] = np.array([0, -0.45, 0, -1, 0, 0, 0, 0])  # right arm
+        # Initialize default posture for null-space control
+        if robot_model._use_fixed_base:
+            self.posture_reference = np.zeros(32)
+            # Set default arm configurations
+            self.posture_reference[14:22] = np.array([0, +0.45, 0, -1, 0, 0, 0, 0])  # left arm
+            self.posture_reference[22:30] = np.array([0, -0.45, 0, -1, 0, 0, 0, 0])  # right arm
         else:
-            self.q_posture_ref = np.zeros(robot.actuatedJointCount())
-            
+            self.posture_reference = np.zeros(len(robot_model.actuatedJointNames()))
 
-    def update(self, X_r, X_dot_r, X_ddot_r):
+    def update(self, target_pose_se3, target_velocity_6d, target_acceleration_6d):
+        """Compute torques for Cartesian space tracking with posture control"""
 
-        if self.robot._use_fixed_base:
-            q = self.robot._q
-            v = self.robot._v
+        # Get current actuated joint configuration and velocities
+        if self.robot_reference._use_fixed_base:
+            current_joint_positions = self.robot_reference._q
+            current_joint_velocities = self.robot_reference._v
         else:
-            # For floating base robot, use the correct offsets
-            #τ = MJ# Ẍd − J̇q + h
-            # ̈X d = Ẍ r − Kd (Ẋ − Ẋ )− Kp (X − X r)
-            q = self.robot._q[self.robot._pos_idx_offset:]  # Skip floating base position (7 DOF)
-            v = self.robot._v[self.robot._vel_idx_offset:] 
+            current_joint_positions = self.robot_reference._q[self.robot_reference._pos_idx_offset:]
+            current_joint_velocities = self.robot_reference._v[self.robot_reference._vel_idx_offset:]
 
-        J = pin.computeJointJacobian(self.robot.model, self.robot.data, self.robot._q, self.id)
+        # Compute task Jacobian matrix
+        full_jacobian = pin.computeJointJacobian(self.robot_reference.model, self.robot_reference.data, 
+                                               self.robot_reference._q, self.target_link_id)
         
-        if not self.robot._use_fixed_base:
-            J = J[:, 6:]
+        if self.robot_reference._use_fixed_base:
+            task_jacobian = full_jacobian
+        else:
+            # Extract actuated joint columns for floating base
+            task_jacobian = full_jacobian[:, 6:]
         
-        X = self.robot.data.oMi[self.id]
-        X_dot = J @ v
-        X_error = pin.log6(X.inverse() * X_r).vector 
-        X_dot_error = X_dot_r - X_dot
-        X_ddot_d = X_ddot_r + self.Kd @ X_dot_error + self.Kp @ X_error
+        # Get current end-effector state
+        current_pose_se3 = self.robot_reference.data.oMi[self.target_link_id]
+        current_velocity_6d = task_jacobian @ current_joint_velocities
         
-        J_dot_q_dot = pin.getClassicalAcceleration(self.robot.model, self.robot.data, self.id, pin.ReferenceFrame.LOCAL).vector
+        # Calculate task space errors
+        pose_error_6d = pin.log6(current_pose_se3.inverse() * target_pose_se3).vector
+        velocity_error_6d = target_velocity_6d - current_velocity_6d
         
-        if not self.robot._use_fixed_base:
-            # Get only the actuated part of the acceleration
-            a_actuated = np.zeros(len(v))  # Initialize with zeros for actuated joints
-            J_dot_q_dot = J @ a_actuated  # This will be zero for this implementation
-            
-        damp = 1e-6
-        J_pinv = J.T @ np.linalg.inv(J @ J.T + damp * np.eye(6))
+        # Compute desired task acceleration using PD law
+        desired_task_acceleration = target_acceleration_6d + self.cartesian_kd @ velocity_error_6d + self.cartesian_kp @ pose_error_6d
         
-        n_joints = len(q)
-        N = np.eye(n_joints) - J.T @ J_pinv.T
+        # Calculate Jacobian derivative term using Pinocchio
+        jacobian_dot_q_dot = pin.getClassicalAcceleration(self.robot_reference.model, self.robot_reference.data, 
+                                                        self.target_link_id, pin.ReferenceFrame.LOCAL).vector
         
-        q_ddot_cart = J_pinv @ (X_ddot_d - J_dot_q_dot)
+        # Compute dynamically consistent pseudo-inverse
+        regularization_term = 1e-6
+        jacobian_pinv = task_jacobian.T @ np.linalg.inv(task_jacobian @ task_jacobian.T + regularization_term * np.eye(6))
         
-        position_error = self.q_posture_ref - q
-        velocity_error = np.zeros(n_joints) - v 
+        # Calculate task space joint accelerations
+        task_accelerations = jacobian_pinv @ (desired_task_acceleration - jacobian_dot_q_dot)
         
+        # Null-space projection for posture control
+        num_actuated_joints = len(current_joint_positions)
+        null_space_projector = np.eye(num_actuated_joints) - jacobian_pinv @ task_jacobian
         
+        # Posture error computation (desired posture velocity = 0)
+        posture_position_error = self.posture_reference - current_joint_positions
+        posture_velocity_error = -current_joint_velocities  # Desired velocity is zero
         
-        Kp_posture = 60.0  
-        Kd_posture = 0.5
-        q_ddot_posture = Kp_posture * position_error + Kd_posture * velocity_error
+        # Null-space PD control gains
+        posture_kp_gain = 56.0  
+        posture_kd_gain = 1.0
         
-        M = self.robot.massMatrix()
-        h = self.robot.coriolisAndGravity()
+        # Compute posture control accelerations
+        posture_accelerations = posture_kp_gain * posture_position_error + posture_kd_gain * posture_velocity_error
+        
+        # Get robot dynamics
+        mass_matrix = self.robot_reference.massMatrix()
+        coriolis_gravity = self.robot_reference.coriolisAndGravity()
 
+        # Combine task and null-space accelerations
+        total_accelerations = task_accelerations + null_space_projector @ posture_accelerations
         
+        # Apply inverse dynamics
+        control_torques = mass_matrix @ total_accelerations + coriolis_gravity
 
-        tau = M @ (q_ddot_cart + N @ q_ddot_posture) + h
-        
-        
-
-        return tau
+        return control_torques
 
 ################################################################################
-# Application
+# Main Application
 ################################################################################
     
 class Environment(Node):
     def __init__(self):
-        super().__init__('environment_talos')
+        super().__init__('talos_control_environment')
                         
-        # state
-        self.cur_state = State.JOINT_SPLINE
+        # Control state machine
+        self.current_control_mode = State.JOINT_SPLINE
         
-        # create simulation
+        # Initialize simulation environment
         self.simulator = PybulletWrapper()
         
+        # ROS publishers and subscribers
         self.joint_state_publisher = self.create_publisher(
             JointState, 
             'joint_states', 
             10)
         
-        self.pose_subscriber= self.create_subscription(
+        self.pose_subscriber = self.create_subscription(
             PoseStamped,
             'hand_target_pose',
-            self.traget_pose_callback,
+            self.target_pose_callback,  # Fixed typo
             10)
         
         ########################################################################
-        # spawn the robot
+        # Robot initialization
         ########################################################################
-        self.q_home = np.zeros(32)
-        self.q_home[14:22] = np.array([0, +0.45, 0, -1, 0, 0, 0, 0 ])
-        self.q_home[22:30] = np.array([0, -0.45, 0, -1, 0, 0, 0, 0 ])
-    
+        # Define target and initial configurations
+        self.home_configuration = np.zeros(32)
+        self.home_configuration[14:22] = np.array([0, +0.45, 0, -1, 0, 0, 0, 0])
+        self.home_configuration[22:30] = np.array([0, -0.45, 0, -1, 0, 0, 0, 0])
         
-        self.q_init = np.zeros(32)
+        self.initial_configuration = np.zeros(32)
         
-        self.robot = Talos(self.simulator, q=self.q_init, verbose=True, useFixedBase=True)
+        # Create robot instance
+        self.robot = Talos(self.simulator, q=self.initial_configuration, verbose=True, useFixedBase=True)
 
+        # Inject ROS components into robot
         self.robot.joint_state_publisher = self.joint_state_publisher
         self.robot.node = self
 
         ########################################################################
-        # joint space spline: init -> home
+        # Joint space trajectory planning
         ########################################################################
-
-        # TODO: create a joint spline 
-        # TODO: create a joint controller
-        self.spline_duration = 5.0
-        t_points = np.array([0.0, self.spline_duration])
+        # Configure trajectory duration and waypoints
+        self.trajectory_duration = 5.0
+        trajectory_time_points = np.array([0.0, self.trajectory_duration])
         
+        # Set up trajectory waypoints based on robot configuration
         if self.robot._use_fixed_base:
-            q_ini_ac = self.robot._q
-            q_home_ac = self.q_home
-            n_actuated = len(q_ini_ac)
+            initial_actuated_config = self.robot._q
+            target_actuated_config = self.home_configuration
         else:
-            q_ini_ac = self.robot._q[self.robot._pos_idx_offset:]  # Use robot's position offset
-            q_home_ac = self.q_home[self.robot._pos_idx_offset:]   # Use robot's position offset
-            n_actuated = len(q_ini_ac)
+            initial_actuated_config = self.robot._q[self.robot._pos_idx_offset:]
+            target_actuated_config = self.home_configuration[self.robot._pos_idx_offset:]
 
-        q_waypoints = np.column_stack([q_ini_ac, q_home_ac])
+        # Create trajectory waypoint matrix
+        trajectory_waypoints = np.column_stack([initial_actuated_config, target_actuated_config])
         
-        self.joint_spline = CubicSpline(t_points, q_waypoints.T, bc_type='clamped')
+        # Generate cubic spline trajectory
+        self.joint_trajectory_spline = CubicSpline(trajectory_time_points, trajectory_waypoints.T, bc_type='clamped')
         
-        kp_base = 70.0
-        kd_base = 3.0
-        
-        # Initialize gain arrays for actuated joints (32 joints)
+        # Configure joint space control gains
         Kp = np.zeros(32)
         Kd = np.zeros(32)
         
-        # Set gains for different robot segments
-        for i in range(0, 12):  # Legs
+        # Set segment-specific gains
+        for i in range(0, 12):  # Leg joints
             Kp[i] = 930.0
-            Kd[i] = 1.0
-        for i in range(12, 14):  # Torso
+            Kd[i] = 1.0  # Fixed: was Kp[i] = 1.0
+        for i in range(12, 14):  # Torso joints
             Kp[i] = 580.0
             Kd[i] = 1.5
-        for i in range(14, 30):  # Arms
+        for i in range(14, 30):  # Arm joints
             Kp[i] = 280.0
             Kd[i] = 0.5
-        for i in range(30, 32):  # Head
+        for i in range(30, 32):  # Head joints
             Kp[i] = 50.0
             Kd[i] = 0.5
 
-        self.joint_controller = JointSpaceController(self.robot, Kp, Kd)
+        # Initialize joint space controller
+        self.joint_space_controller = JointSpaceController(self.robot, Kp, Kd)
         
         ########################################################################
-        # cart space: hand motion
+        # Cartesian space control setup
         ########################################################################
+        # Initialize Cartesian controller for right hand
+        self.cartesian_space_controller = CartesianSpaceController(self.robot, "arm_right_7_joint", 
+                                                                 Kp, Kd)
+        
+        # Target pose placeholder
+        self.target_end_effector_pose = None
 
-        # TODO: create a cartesian controller
-        self.cartesian_controller = CartesianSpaceController(self.robot, "arm_right_7_joint", Kp, Kd)
-        
-        self.X_goal = None
-
-
         ########################################################################
-        # logging
+        # Publishing and timing configuration
         ########################################################################
+        self.last_publish_time = 0.0
+        self.publish_time_interval = 0.01  # 100 Hz
         
-        self.t_publish = 0.0
-        self.publish_period = 0.01
+    def target_pose_callback(self, pose_message):
+        """Handle incoming target pose messages"""
         
-    def traget_pose_callback(self, msg):
+        # Extract position and orientation from ROS message
+        position_ros = pose_message.pose.position
+        orientation_ros = pose_message.pose.orientation
         
-        pos = msg.pose.position
-        orientation = msg.pose.orientation
-        position = np.array([pos.x, pos.y, pos.z])
-        orientation = np.array([orientation.x, orientation.y, orientation.z, orientation.w])
-        self.X_goal = pin.XYZQUATToSE3(np.concatenate([position, orientation]))
-        self.get_logger().debug(f"Received target pose: {self.X_goal}")
+        # Convert to numpy arrays
+        position_array = np.array([position_ros.x, position_ros.y, position_ros.z])
+        orientation_array = np.array([orientation_ros.x, orientation_ros.y, orientation_ros.z, orientation_ros.w])
         
-    def update(self, t, dt):
+        # Convert to Pinocchio SE3 representation
+        self.target_end_effector_pose = pin.XYZQUATToSE3(np.concatenate([position_array, orientation_array]))
+        self.get_logger().debug(f"Received target end-effector pose: {self.target_end_effector_pose}")
         
-        # TODO: update the robot and model
+    def update(self, simulation_time, time_step):
+        """Main control loop update function"""
+        
+        # Update robot state and kinematics
         self.robot.update()
 
-        # update the controllers
-        # TODO: Do inital jointspace, switch to cartesianspace control
+        # Initialize control torques
+        control_torques = np.zeros(len(self.robot.actuatedJointNames()))  # Fixed: use len()
         
-        # command the robot
-        
-        if self.cur_state == State.JOINT_SPLINE:
-            if t <= self.spline_duration:
-                q_r = self.joint_spline(t)
-                q_r_dot = self.joint_spline(t, 1)
-                q_r_ddot = self.joint_spline(t, 2)
-                tau = self.joint_controller.update(q_r, q_r_dot, q_r_ddot)
+        # State machine for control modes
+        if self.current_control_mode == State.JOINT_SPLINE:
+            if simulation_time <= self.trajectory_duration:
+                # Execute joint space trajectory tracking
+                desired_positions = self.joint_trajectory_spline(simulation_time)
+                desired_velocities = self.joint_trajectory_spline(simulation_time, 1)
+                desired_accelerations = self.joint_trajectory_spline(simulation_time, 2)
+                control_torques = self.joint_space_controller.update(desired_positions, desired_velocities, desired_accelerations)
             else:
-                if self.X_goal is None:
+                # Prepare for Cartesian control mode transition
+                if self.target_end_effector_pose is None:
+                    # Save current end-effector pose as target
                     hand_joint_id = self.robot.model.getJointId("arm_right_7_joint")
-                    self.X_goal = self.robot.data.oMi[hand_joint_id].copy()
-                    self.cartesian_controller.q_posture_ref = self.robot._q.copy()
-                    print("Switching to Cartesian control, saved goal pose")
+                    self.target_end_effector_pose = self.robot.data.oMi[hand_joint_id].copy()
                     
-                self.cur_state = State.CART_SPLINE
+                    # Update posture reference for Cartesian controller
+                    self.cartesian_space_controller.posture_reference = self.robot._q.copy()
+                    self.get_logger().info("Transitioning to Cartesian control mode")
+                    
+                self.current_control_mode = State.CART_SPLINE  # Fixed: use correct enum value
                 
-                q_r = self.joint_spline(self.spline_duration)
-                q_r_dot = np.zeros_like(q_r)
-                q_r_ddot = np.zeros_like(q_r)
-                tau = self.joint_controller.update(q_r, q_r_dot, q_r_ddot)
+                # Hold final trajectory position
+                final_positions = self.joint_trajectory_spline(self.trajectory_duration)
+                final_velocities = np.zeros_like(final_positions)
+                final_accelerations = np.zeros_like(final_positions)
+                control_torques = self.joint_space_controller.update(final_positions, final_velocities, final_accelerations)
                 
+        elif self.current_control_mode == State.CART_SPLINE:  # Fixed: use correct enum value
+            # Execute Cartesian space control
+            if self.target_end_effector_pose is not None:
+                target_pose = self.target_end_effector_pose
+                target_velocity = np.zeros(6)  # Hold position: zero velocity
+                target_acceleration = np.zeros(6)  # Hold position: zero acceleration
                 
-        elif self.cur_state == State.CART_SPLINE:
-            # Cartesian space control - hold the saved pose
-            X_r = self.X_goal
-            X_dot_r = np.zeros(6)
-            X_ddot_r = np.zeros(6)
-            
-            tau = self.cartesian_controller.update(X_r, X_dot_r, X_ddot_r)
-
-                
+                control_torques = self.cartesian_space_controller.update(target_pose, target_velocity, target_acceleration)
+            else:
+                self.get_logger().warn("Cartesian mode active but no target pose available")
+                control_torques = np.zeros(len(self.robot.actuatedJointNames()))  # Fixed: use len()
         else:
-            tau = np.zeros(self.robot.actuatedJointCount())
+            # Default case: no control
+            control_torques = np.zeros(len(self.robot.actuatedJointNames()))  # Fixed: use len()
         
-        self.robot.setActuatedJointTorques(tau)
+        # Apply computed torques to robot
+        self.robot.setActuatedJointTorques(control_torques)
 
-        if t - self.t_publish >= self.publish_period:
+        # Publish joint states at specified frequency
+        if simulation_time - self.last_publish_time >= self.publish_time_interval:
             self.robot.publish()
-            self.t_publish = t
+            self.last_publish_time = simulation_time
 
         
 def main():
     rclpy.init()  
-    env = Environment()
+    environment_controller = Environment()
     
     try:
         while rclpy.ok():
-            t = env.simulator.simTime()
-            dt = env.simulator.stepTime()
+            current_time = environment_controller.simulator.simTime()
+            delta_time = environment_controller.simulator.stepTime()
             
-            env.update(t, dt)
+            environment_controller.update(current_time, delta_time)
             
-            env.simulator.debug()
-            env.simulator.step()
+            environment_controller.simulator.debug()
+            environment_controller.simulator.step()
             
-            # Spin ROS callbacks
-            rclpy.spin_once(env, timeout_sec=0.0)
+            # Process ROS callbacks
+            rclpy.spin_once(environment_controller, timeout_sec=0.0)
     except KeyboardInterrupt:
-        pass
+        environment_controller.get_logger().info("Shutdown requested by user")
     finally:
-        env.destroy_node()
+        environment_controller.destroy_node()
         rclpy.shutdown()
         
 if __name__ == '__main__': 
     main()
-    

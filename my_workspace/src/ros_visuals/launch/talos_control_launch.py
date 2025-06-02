@@ -7,7 +7,6 @@ from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
 import os
 from launch import LaunchDescription
-from pathlib import Path
 
 
 def generate_launch_description():
@@ -35,7 +34,7 @@ def generate_launch_description():
         arguments=['-d', rviz_config_file], 
     )
     
-    rsp = launch_ros.actions.Node(package='robot_state_publisher',
+    robot_state_publisher = launch_ros.actions.Node(package='robot_state_publisher',
                                   executable='robot_state_publisher',
                                   output='both',
                                   parameters=[params])
@@ -48,14 +47,7 @@ def generate_launch_description():
         output='screen',
         parameters=[{'use_sim_time': False}],
     )
-    
-    t23_node = Node(
-        package='bullet_sims',
-        executable='t23',
-        name='t23',
-        output='screen',
-        parameters=[{'use_sim_time': False}],
-    )
+  
     interactive_marker_node = Node(
         package='bullet_sims',
         executable='interactive_marker_hand',
@@ -64,12 +56,9 @@ def generate_launch_description():
         parameters=[{'use_sim_time': False}],
     )
 
-    ld.add_action(rsp)
-    #ld.add_action(robot_state_publisher_node)
+    ld.add_action(robot_state_publisher)
     ld.add_action(rviz_node)
     ld.add_action(t3_node)
-    #ld.add_action(t23_node)
     ld.add_action(interactive_marker_node)
 
-    # Return the launch description
     return ld

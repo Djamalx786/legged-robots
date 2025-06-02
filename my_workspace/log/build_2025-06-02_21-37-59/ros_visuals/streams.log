@@ -1,0 +1,27 @@
+[1.893s] Invoking command in '/workspaces/workspaces/my_workspace/build/ros_visuals': PYTHONPATH=/workspaces/workspaces/my_workspace/build/ros_visuals/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspaces/workspaces/my_workspace/install/ros_visuals/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /workspaces/workspaces/my_workspace/build/ros_visuals/build --no-deps symlink_data --force
+[2.380s] running develop
+[2.679s] running egg_info
+[2.710s] writing ros_visuals.egg-info/PKG-INFO
+[2.710s] writing dependency_links to ros_visuals.egg-info/dependency_links.txt
+[2.710s] writing entry points to ros_visuals.egg-info/entry_points.txt
+[2.711s] writing requirements to ros_visuals.egg-info/requires.txt
+[2.711s] writing top-level names to ros_visuals.egg-info/top_level.txt
+[3.124s] writing manifest file 'ros_visuals.egg-info/SOURCES.txt'
+[3.156s] running build_ext
+[3.156s] Creating /workspaces/workspaces/my_workspace/install/ros_visuals/lib/python3.12/site-packages/ros-visuals.egg-link (link to .)
+[3.157s] Installing t11 script to /workspaces/workspaces/my_workspace/install/ros_visuals/lib/ros_visuals
+[3.157s] Installing t12 script to /workspaces/workspaces/my_workspace/install/ros_visuals/lib/ros_visuals
+[3.158s] Installing t13 script to /workspaces/workspaces/my_workspace/install/ros_visuals/lib/ros_visuals
+[3.158s] 
+[3.158s] Installed /workspaces/workspaces/my_workspace/build/ros_visuals
+[3.158s] running symlink_data
+[3.159s] symbolically linking /workspaces/workspaces/my_workspace/build/ros_visuals/package.xml -> /workspaces/workspaces/my_workspace/install/ros_visuals/share/ament_index/resource_index/packages
+[3.159s] symbolically linking /workspaces/workspaces/my_workspace/build/ros_visuals/config/compare_cage.rviz -> /workspaces/workspaces/my_workspace/install/ros_visuals/share/ros_visuals/config
+[3.159s] symbolically linking /workspaces/workspaces/my_workspace/build/ros_visuals/config/talos_new.rviz -> /workspaces/workspaces/my_workspace/install/ros_visuals/share/ros_visuals/config
+[3.160s] symbolically linking /workspaces/workspaces/my_workspace/build/ros_visuals/config/rviz_config.rviz -> /workspaces/workspaces/my_workspace/install/ros_visuals/share/ros_visuals/config
+[3.160s] symbolically linking /workspaces/workspaces/my_workspace/build/ros_visuals/config/talos.rviz -> /workspaces/workspaces/my_workspace/install/ros_visuals/share/ros_visuals/config
+[3.161s] symbolically linking /workspaces/workspaces/my_workspace/build/ros_visuals/launch/talos_control_launch.py -> /workspaces/workspaces/my_workspace/install/ros_visuals/share/ros_visuals/launch
+[3.161s] symbolically linking /workspaces/workspaces/my_workspace/build/ros_visuals/launch/launch.py -> /workspaces/workspaces/my_workspace/install/ros_visuals/share/ros_visuals/launch
+[3.161s] symbolically linking /workspaces/workspaces/my_workspace/build/ros_visuals/launch/talos_rviz_launch.py -> /workspaces/workspaces/my_workspace/install/ros_visuals/share/ros_visuals/launch
+[3.162s] symbolically linking /workspaces/workspaces/my_workspace/build/ros_visuals/launch/compare_methods.launch.py -> /workspaces/workspaces/my_workspace/install/ros_visuals/share/ros_visuals/launch
+[3.269s] Invoked command in '/workspaces/workspaces/my_workspace/build/ros_visuals' returned '0': PYTHONPATH=/workspaces/workspaces/my_workspace/build/ros_visuals/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspaces/workspaces/my_workspace/install/ros_visuals/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /workspaces/workspaces/my_workspace/build/ros_visuals/build --no-deps symlink_data --force

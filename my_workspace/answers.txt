@@ -2,10 +2,14 @@ Homework Solutions
 
 
 Exercise 1. 
+a.3) Not all frames are correct. Frame  03, O5 have inconsistent orientations compared to their symmetric counterparts, breaking the expected right-handed coordinate system. (z-axis is flipped)
+a.10) No, they are not exactly the same in the RViz view. When using cube markers, differences in orientation become noticeable because cubes have visible faces and edges that make any rotation around the axes visually apparent.
 b.8) When the cage spins, the force component of the transformed wrench remains constant in the world frame because it is a translational quantity and independent of rotational motion. However, the torque component changes since torque depends on the relative position of the force application point, which varies with the cage's rotation. This happens due to the cross-product relationship between the force vector and the position vector.
-
+c.8) When the cage spins, the linear component of the transformed wrench stays constant, while the angular component changes because it depends on the rotation of the reference frame. The linear part remains unchanged since the force vector direction and magnitude stay the same in inertial space.
 
 ------
 
 Exercise 2 
 a.8) No, the t2_temp.py script is not a ROS node. It doesn't use any ROS 2-specific features like initializing ROS with rclpy.init() or defining a node using rclpy.node.Node. A proper ROS node would also need to use publishers, subscribers, or services to communicate within the ROS ecosystem. Without those ROS-specific elements, it can't really interact with other ROS nodes or the ROS system.
+
+Exercise 3 

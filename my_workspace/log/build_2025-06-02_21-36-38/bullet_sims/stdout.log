@@ -1,0 +1,45 @@
+running develop
+Removing /workspaces/workspaces/my_workspace/install/bullet_sims/lib/python3.12/site-packages/bullet-sims.egg-link (link to .)
+running egg_info
+writing ../../build/bullet_sims/bullet_sims.egg-info/PKG-INFO
+writing dependency_links to ../../build/bullet_sims/bullet_sims.egg-info/dependency_links.txt
+writing entry points to ../../build/bullet_sims/bullet_sims.egg-info/entry_points.txt
+writing requirements to ../../build/bullet_sims/bullet_sims.egg-info/requires.txt
+writing top-level names to ../../build/bullet_sims/bullet_sims.egg-info/top_level.txt
+writing manifest file '../../build/bullet_sims/bullet_sims.egg-info/SOURCES.txt'
+running build
+running build_py
+copying bullet_sims/debug_joints.py -> /workspaces/workspaces/my_workspace/build/bullet_sims/build/lib/bullet_sims
+copying bullet_sims/t3_main.py -> /workspaces/workspaces/my_workspace/build/bullet_sims/build/lib/bullet_sims
+running install
+running install_lib
+creating /workspaces/workspaces/my_workspace/install/bullet_sims/lib/python3.12/site-packages/bullet_sims
+copying /workspaces/workspaces/my_workspace/build/bullet_sims/build/lib/bullet_sims/t22.py -> /workspaces/workspaces/my_workspace/install/bullet_sims/lib/python3.12/site-packages/bullet_sims
+copying /workspaces/workspaces/my_workspace/build/bullet_sims/build/lib/bullet_sims/t2_temp.py -> /workspaces/workspaces/my_workspace/install/bullet_sims/lib/python3.12/site-packages/bullet_sims
+copying /workspaces/workspaces/my_workspace/build/bullet_sims/build/lib/bullet_sims/debug_joints.py -> /workspaces/workspaces/my_workspace/install/bullet_sims/lib/python3.12/site-packages/bullet_sims
+copying /workspaces/workspaces/my_workspace/build/bullet_sims/build/lib/bullet_sims/t3_main.py -> /workspaces/workspaces/my_workspace/install/bullet_sims/lib/python3.12/site-packages/bullet_sims
+copying /workspaces/workspaces/my_workspace/build/bullet_sims/build/lib/bullet_sims/__init__.py -> /workspaces/workspaces/my_workspace/install/bullet_sims/lib/python3.12/site-packages/bullet_sims
+copying /workspaces/workspaces/my_workspace/build/bullet_sims/build/lib/bullet_sims/t21.py -> /workspaces/workspaces/my_workspace/install/bullet_sims/lib/python3.12/site-packages/bullet_sims
+copying /workspaces/workspaces/my_workspace/build/bullet_sims/build/lib/bullet_sims/t23.py -> /workspaces/workspaces/my_workspace/install/bullet_sims/lib/python3.12/site-packages/bullet_sims
+copying /workspaces/workspaces/my_workspace/build/bullet_sims/build/lib/bullet_sims/teleoperation.py -> /workspaces/workspaces/my_workspace/install/bullet_sims/lib/python3.12/site-packages/bullet_sims
+byte-compiling /workspaces/workspaces/my_workspace/install/bullet_sims/lib/python3.12/site-packages/bullet_sims/t22.py to t22.cpython-312.pyc
+byte-compiling /workspaces/workspaces/my_workspace/install/bullet_sims/lib/python3.12/site-packages/bullet_sims/t2_temp.py to t2_temp.cpython-312.pyc
+byte-compiling /workspaces/workspaces/my_workspace/install/bullet_sims/lib/python3.12/site-packages/bullet_sims/debug_joints.py to debug_joints.cpython-312.pyc
+byte-compiling /workspaces/workspaces/my_workspace/install/bullet_sims/lib/python3.12/site-packages/bullet_sims/t3_main.py to t3_main.cpython-312.pyc
+byte-compiling /workspaces/workspaces/my_workspace/install/bullet_sims/lib/python3.12/site-packages/bullet_sims/__init__.py to __init__.cpython-312.pyc
+byte-compiling /workspaces/workspaces/my_workspace/install/bullet_sims/lib/python3.12/site-packages/bullet_sims/t21.py to t21.cpython-312.pyc
+byte-compiling /workspaces/workspaces/my_workspace/install/bullet_sims/lib/python3.12/site-packages/bullet_sims/t23.py to t23.cpython-312.pyc
+byte-compiling /workspaces/workspaces/my_workspace/install/bullet_sims/lib/python3.12/site-packages/bullet_sims/teleoperation.py to teleoperation.cpython-312.pyc
+running install_data
+copying resource/bullet_sims -> /workspaces/workspaces/my_workspace/install/bullet_sims/share/ament_index/resource_index/packages
+copying package.xml -> /workspaces/workspaces/my_workspace/install/bullet_sims/share/bullet_sims
+running install_egg_info
+Copying ../../build/bullet_sims/bullet_sims.egg-info to /workspaces/workspaces/my_workspace/install/bullet_sims/lib/python3.12/site-packages/bullet_sims-0.0.0-py3.12.egg-info
+running install_scripts
+Installing interactive_marker_hand script to /workspaces/workspaces/my_workspace/install/bullet_sims/lib/bullet_sims
+Installing t21 script to /workspaces/workspaces/my_workspace/install/bullet_sims/lib/bullet_sims
+Installing t22 script to /workspaces/workspaces/my_workspace/install/bullet_sims/lib/bullet_sims
+Installing t23 script to /workspaces/workspaces/my_workspace/install/bullet_sims/lib/bullet_sims
+Installing t2_temp script to /workspaces/workspaces/my_workspace/install/bullet_sims/lib/bullet_sims
+Installing t3_main script to /workspaces/workspaces/my_workspace/install/bullet_sims/lib/bullet_sims
+writing list of installed files to '/workspaces/workspaces/my_workspace/build/bullet_sims/install.log'
