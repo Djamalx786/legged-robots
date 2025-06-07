@@ -1,0 +1,26 @@
+running develop
+running egg_info
+creating bullet_sims.egg-info
+writing bullet_sims.egg-info/PKG-INFO
+writing dependency_links to bullet_sims.egg-info/dependency_links.txt
+writing entry points to bullet_sims.egg-info/entry_points.txt
+writing requirements to bullet_sims.egg-info/requires.txt
+writing top-level names to bullet_sims.egg-info/top_level.txt
+writing manifest file 'bullet_sims.egg-info/SOURCES.txt'
+writing manifest file 'bullet_sims.egg-info/SOURCES.txt'
+running build_ext
+Creating /workspaces/workspaces/my_workspace/install/bullet_sims/lib/python3.12/site-packages/bullet-sims.egg-link (link to .)
+Installing interactive_marker_hand script to /workspaces/workspaces/my_workspace/install/bullet_sims/lib/bullet_sims
+Installing t21 script to /workspaces/workspaces/my_workspace/install/bullet_sims/lib/bullet_sims
+Installing t22 script to /workspaces/workspaces/my_workspace/install/bullet_sims/lib/bullet_sims
+Installing t23 script to /workspaces/workspaces/my_workspace/install/bullet_sims/lib/bullet_sims
+Installing t2_temp script to /workspaces/workspaces/my_workspace/install/bullet_sims/lib/bullet_sims
+Installing t3_main script to /workspaces/workspaces/my_workspace/install/bullet_sims/lib/bullet_sims
+
+Installed /workspaces/workspaces/my_workspace/build/bullet_sims
+running symlink_data
+creating /workspaces/workspaces/my_workspace/install/bullet_sims/share/ament_index
+creating /workspaces/workspaces/my_workspace/install/bullet_sims/share/ament_index/resource_index
+creating /workspaces/workspaces/my_workspace/install/bullet_sims/share/ament_index/resource_index/packages
+symbolically linking /workspaces/workspaces/my_workspace/build/bullet_sims/resource/bullet_sims -> /workspaces/workspaces/my_workspace/install/bullet_sims/share/ament_index/resource_index/packages
+symbolically linking /workspaces/workspaces/my_workspace/build/bullet_sims/package.xml -> /workspaces/workspaces/my_workspace/install/bullet_sims/share/bullet_sims

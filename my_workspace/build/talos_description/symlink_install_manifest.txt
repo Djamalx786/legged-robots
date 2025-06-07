@@ -78,6 +78,7 @@
 /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/robots/talos.urdf
 /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/robots/talos_reduced.urdf
 /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/robots/talos_reduced_no_hands.urdf
+/workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/robots/talos_reduced_no_hands_old.urdf
 /workspaces/workspaces/my_workspace/install/talos_description/share/ament_index/resource_index/package_run_dependencies/talos_description
 /workspaces/workspaces/my_workspace/install/talos_description/share/ament_index/resource_index/parent_prefix_path/talos_description
 /workspaces/workspaces/my_workspace/install/talos_description/share/talos_description/environment/ament_prefix_path.sh

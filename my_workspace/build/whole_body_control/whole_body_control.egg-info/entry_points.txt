@@ -1,0 +1,2 @@
+[console_scripts]
+t4_standing = whole_body_control.t4_standing:main

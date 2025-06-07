@@ -1,0 +1,29 @@
+running develop
+running egg_info
+creating ros_visuals.egg-info
+writing ros_visuals.egg-info/PKG-INFO
+writing dependency_links to ros_visuals.egg-info/dependency_links.txt
+writing entry points to ros_visuals.egg-info/entry_points.txt
+writing requirements to ros_visuals.egg-info/requires.txt
+writing top-level names to ros_visuals.egg-info/top_level.txt
+writing manifest file 'ros_visuals.egg-info/SOURCES.txt'
+writing manifest file 'ros_visuals.egg-info/SOURCES.txt'
+running build_ext
+Creating /workspaces/workspaces/my_workspace/install/ros_visuals/lib/python3.12/site-packages/ros-visuals.egg-link (link to .)
+Installing t11 script to /workspaces/workspaces/my_workspace/install/ros_visuals/lib/ros_visuals
+Installing t12 script to /workspaces/workspaces/my_workspace/install/ros_visuals/lib/ros_visuals
+Installing t13 script to /workspaces/workspaces/my_workspace/install/ros_visuals/lib/ros_visuals
+
+Installed /workspaces/workspaces/my_workspace/build/ros_visuals
+running symlink_data
+symbolically linking /workspaces/workspaces/my_workspace/build/ros_visuals/package.xml -> /workspaces/workspaces/my_workspace/install/ros_visuals/share/ament_index/resource_index/packages
+creating /workspaces/workspaces/my_workspace/install/ros_visuals/share/ros_visuals/config
+symbolically linking /workspaces/workspaces/my_workspace/build/ros_visuals/config/compare_cage.rviz -> /workspaces/workspaces/my_workspace/install/ros_visuals/share/ros_visuals/config
+symbolically linking /workspaces/workspaces/my_workspace/build/ros_visuals/config/talos_new.rviz -> /workspaces/workspaces/my_workspace/install/ros_visuals/share/ros_visuals/config
+symbolically linking /workspaces/workspaces/my_workspace/build/ros_visuals/config/rviz_config.rviz -> /workspaces/workspaces/my_workspace/install/ros_visuals/share/ros_visuals/config
+symbolically linking /workspaces/workspaces/my_workspace/build/ros_visuals/config/talos.rviz -> /workspaces/workspaces/my_workspace/install/ros_visuals/share/ros_visuals/config
+creating /workspaces/workspaces/my_workspace/install/ros_visuals/share/ros_visuals/launch
+symbolically linking /workspaces/workspaces/my_workspace/build/ros_visuals/launch/talos_control_launch.py -> /workspaces/workspaces/my_workspace/install/ros_visuals/share/ros_visuals/launch
+symbolically linking /workspaces/workspaces/my_workspace/build/ros_visuals/launch/launch.py -> /workspaces/workspaces/my_workspace/install/ros_visuals/share/ros_visuals/launch
+symbolically linking /workspaces/workspaces/my_workspace/build/ros_visuals/launch/talos_rviz_launch.py -> /workspaces/workspaces/my_workspace/install/ros_visuals/share/ros_visuals/launch
+symbolically linking /workspaces/workspaces/my_workspace/build/ros_visuals/launch/compare_methods.launch.py -> /workspaces/workspaces/my_workspace/install/ros_visuals/share/ros_visuals/launch
