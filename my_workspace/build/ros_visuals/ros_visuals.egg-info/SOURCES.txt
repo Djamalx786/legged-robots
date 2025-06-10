@@ -1,3 +1,4 @@
+colcon_build.rc
 colcon_command_prefix_setup_py.sh
 colcon_command_prefix_setup_py.sh.env
 package.xml
@@ -29,3 +30,6 @@ ros_visuals/__pycache__/__init__.cpython-312.pyc
 ros_visuals/__pycache__/t11.cpython-312.pyc
 ros_visuals/__pycache__/t12.cpython-312.pyc
 ros_visuals/__pycache__/t13.cpython-312.pyc
+share/ros_visuals/hook/pythonpath_develop.dsv
+share/ros_visuals/hook/pythonpath_develop.ps1
+share/ros_visuals/hook/pythonpath_develop.sh

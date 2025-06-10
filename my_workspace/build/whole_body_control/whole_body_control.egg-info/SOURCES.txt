@@ -1,8 +1,16 @@
+colcon_build.rc
+colcon_command_prefix_setup_py.sh
+colcon_command_prefix_setup_py.sh.env
 package.xml
 setup.cfg
 setup.py
 launch/launch.py
+prefix_override/sitecustomize.py
+prefix_override/__pycache__/sitecustomize.cpython-312.pyc
 resource/whole_body_control
+share/whole_body_control/hook/pythonpath_develop.dsv
+share/whole_body_control/hook/pythonpath_develop.ps1
+share/whole_body_control/hook/pythonpath_develop.sh
 whole_body_control/02_one_leg_stand.py
 whole_body_control/03_squating.py
 whole_body_control/__init__.py
@@ -16,3 +24,7 @@ whole_body_control.egg-info/entry_points.txt
 whole_body_control.egg-info/requires.txt
 whole_body_control.egg-info/top_level.txt
 whole_body_control.egg-info/zip-safe
+whole_body_control/__pycache__/__init__.cpython-312.pyc
+whole_body_control/__pycache__/config.cpython-312.pyc
+whole_body_control/__pycache__/t4_standing.cpython-312.pyc
+whole_body_control/__pycache__/tsid_wrapper.cpython-312.pyc

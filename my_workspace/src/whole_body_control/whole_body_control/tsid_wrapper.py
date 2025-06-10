@@ -459,7 +459,7 @@ class TSIDWrapper:
         T_frame_w = self.robot.framePosition(data, self.base_id)
         v_frame_w = self.robot.frameVelocity(data, self.base_id)
         if dv is not None:
-            a_frame_w = self.torso_task.getAcceleration(dv)
+            a_frame_w = self.torsoTask.getAcceleration(dv)
             return T_frame_w, v_frame_w, a_frame_w
         return T_frame_w, v_frame_w
 

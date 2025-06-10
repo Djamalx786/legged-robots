@@ -1,2 +1,3 @@
 [console_scripts]
+02_one_leg_stand = whole_body_control.02_one_leg_stand:main
 t4_standing = whole_body_control.t4_standing:main

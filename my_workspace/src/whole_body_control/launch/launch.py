@@ -43,21 +43,22 @@ def generate_launch_description():
     t4_node = Node(
         package='whole_body_control',
         executable='t4_standing',
-        name='t4_standing',
+        name='t4_standing_unique',
         output='screen',
         parameters=[{'use_sim_time': False}],
     )
-    """"
-    interactive_marker_node = Node(
-        package='bullet_sims',
-        executable='interactive_marker_hand',
-        name='interactive_marker_hand',
+    one_leg_stand_node = Node(
+        package='whole_body_control',
+        executable='02_one_leg_stand',
+        name='one_leg_stand',
         output='screen',
         parameters=[{'use_sim_time': False}],
     )
-    """
+
+    # Add the nodes to the launch description
     ld.add_action(robot_state_publisher)
     ld.add_action(rviz_node)
-    ld.add_action(t4_node)
+    ld.add_action(one_leg_stand_node)
+    #ld.add_action(t4_node)
     
     return ld
