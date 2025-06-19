@@ -4,16 +4,13 @@
 import os
 import pinocchio as pin
 import numpy as np
-import rospkg
-from ament_index_python.packages import get_package_share_directory # Add this line
-
+from ament_index_python.packages import get_package_share_directory
 
 ################################################################################
 # robot
 ################################################################################
 
-rospack = rospkg.RosPack()
-talos_description = get_package_share_directory('talos_description') # Add this line
+talos_description = get_package_share_directory('talos_description')
 urdf = os.path.join(talos_description, "robots/talos_reduced_no_hands.urdf")
 path = os.path.join(talos_description, "meshes/../..")
 
@@ -25,7 +22,7 @@ na = 30                                         # number of actuated
 q_actuated_home = np.zeros(na)
 q_actuated_home[:6] = np.array([0.0004217227847487237, -0.00457389353360238, -0.44288825380502317, 0.9014217614029372, -0.4586176441428318, 0.00413219379047014])
 q_actuated_home[6:12] = np.array([-0.0004612402198835852, -0.0031162522884748967, -0.4426315354712109, 0.9014369887125069, -0.4588832011407824, 0.003546732694320376])
-q_home = np.hstack([np.array([0, 0, 1.1, 0, 0, 0, 1]), q_actuated_home])
+q_home = np.hstack([np.array([0, 0, 0.9, 0, 0, 0, 1]), q_actuated_home])
 
 '''
 0, 1, 2, 3, 4, 5,		# left leg
@@ -74,10 +71,10 @@ w_am = 1e-4             # weight of angular momentum task
 w_foot = 1e-1           # weight of the foot motion task: here no motion
 w_hand = 1e-1           # weight of the hand motion task
 w_torso = 1             # weight torso orientation motion task
-w_feet_contact = 1e3    # weight of foot in contact (reduced from 1e5 to 1e3 for better physics)
-w_hand_contact = 1e3    # weight for hand in contact
-w_posture = 1e-2        # INCREASED from 1e-3 - weight of joint posture task
-w_force_reg = 1e-3      # INCREASED from 1e-5 - weight of force regularization task (note this is really important!)
+w_feet_contact = 1e5    # weight of foot in contact (negative means infinite weight)
+w_hand_contact = 1e5    # weight for hand in contact
+w_posture = 1e-3        # weight of joint posture task
+w_force_reg = 1e-5      # weight of force regularization task (note this is really important!)
 w_torque_bounds = 1.0   # weight of the torque bounds: here no bounds
 w_joint_bounds = 0.0    # weight of the velocity bounds: here no bounds
 

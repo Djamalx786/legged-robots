@@ -13,7 +13,7 @@ def generate_launch_description():
     # Declare the launch description
     ld = LaunchDescription()
     talos_description_pkg_share = FindPackageShare('talos_description').find('talos_description')
-    urdf_file_path = os.path.join(talos_description_pkg_share, 'robots', 'talos_reduced.urdf')
+    urdf_file_path = os.path.join(talos_description_pkg_share, 'robots', 'talos_reduced_no_hands.urdf')
 
     # Declare the RViz configuration file path
     rviz_config_dir = os.path.join(FindPackageShare('ros_visuals').find('ros_visuals'), 'config')
@@ -46,6 +46,7 @@ def generate_launch_description():
         name='t4_standing_unique',
         output='screen',
         parameters=[{'use_sim_time': False}],
+        #environment={'PYTHONPATH': '/workspaces/workspaces/my_workspace/src:/workspaces/workspaces/my_workspace/src/whole_body_control'},
     )
     one_leg_stand_node = Node(
         package='whole_body_control',
@@ -53,12 +54,20 @@ def generate_launch_description():
         name='one_leg_stand',
         output='screen',
         parameters=[{'use_sim_time': False}],
+        #environment={'PYTHONPATH': '/workspaces/workspaces/my_workspace/src:/workspaces/workspaces/my_workspace/src/whole_body_control'},
     )
-
+    squatting_node = Node(
+        package='whole_body_control',
+        executable='03_squating',
+        name='squatting',
+        output='screen',
+        parameters=[{'use_sim_time': False}],
+    )
     # Add the nodes to the launch description
     ld.add_action(robot_state_publisher)
     ld.add_action(rviz_node)
-    ld.add_action(one_leg_stand_node)
     #ld.add_action(t4_node)
+    #ld.add_action(one_leg_stand_node)
+    ld.add_action(squatting_node)
     
     return ld

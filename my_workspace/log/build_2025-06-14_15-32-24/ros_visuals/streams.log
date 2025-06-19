@@ -1,0 +1,18 @@
+[2.117s] Invoking command in '/workspaces/workspaces/my_workspace/build/ros_visuals': PYTHONPATH=/workspaces/workspaces/my_workspace/build/ros_visuals/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspaces/workspaces/my_workspace/install/ros_visuals/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /workspaces/workspaces/my_workspace/build/ros_visuals/build --no-deps symlink_data
+[2.839s] running develop
+[3.271s] running egg_info
+[3.311s] writing ros_visuals.egg-info/PKG-INFO
+[3.312s] writing dependency_links to ros_visuals.egg-info/dependency_links.txt
+[3.312s] writing entry points to ros_visuals.egg-info/entry_points.txt
+[3.312s] writing requirements to ros_visuals.egg-info/requires.txt
+[3.313s] writing top-level names to ros_visuals.egg-info/top_level.txt
+[3.879s] writing manifest file 'ros_visuals.egg-info/SOURCES.txt'
+[3.929s] running build_ext
+[3.929s] Creating /workspaces/workspaces/my_workspace/install/ros_visuals/lib/python3.12/site-packages/ros-visuals.egg-link (link to .)
+[3.931s] Installing t11 script to /workspaces/workspaces/my_workspace/install/ros_visuals/lib/ros_visuals
+[3.931s] Installing t12 script to /workspaces/workspaces/my_workspace/install/ros_visuals/lib/ros_visuals
+[3.931s] Installing t13 script to /workspaces/workspaces/my_workspace/install/ros_visuals/lib/ros_visuals
+[3.932s] 
+[3.932s] Installed /workspaces/workspaces/my_workspace/build/ros_visuals
+[3.933s] running symlink_data
+[4.042s] Invoked command in '/workspaces/workspaces/my_workspace/build/ros_visuals' returned '0': PYTHONPATH=/workspaces/workspaces/my_workspace/build/ros_visuals/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspaces/workspaces/my_workspace/install/ros_visuals/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /workspaces/workspaces/my_workspace/build/ros_visuals/build --no-deps symlink_data
