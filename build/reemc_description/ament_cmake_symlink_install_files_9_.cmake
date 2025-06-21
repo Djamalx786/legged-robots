@@ -1,1 +1,0 @@
-ament_cmake_symlink_install_files("/workspaces/workspaces/my_workspace/src/reemc_description" FILES "/workspaces/workspaces/build/reemc_description/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/reemc_description")

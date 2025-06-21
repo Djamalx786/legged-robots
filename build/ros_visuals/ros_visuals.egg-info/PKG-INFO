@@ -1,7 +1,0 @@
-Metadata-Version: 2.1
-Name: ros-visuals
-Version: 0.0.0
-Summary: Package for visualizing cage transforms
-Maintainer: djamal
-Maintainer-email: djamal.halim@tum.de
-License: Apache License 2.0

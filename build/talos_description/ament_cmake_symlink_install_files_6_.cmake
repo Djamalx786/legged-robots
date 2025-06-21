@@ -1,1 +1,0 @@
-ament_cmake_symlink_install_files("/workspaces/workspaces/my_workspace/src/talos_description" FILES "/workspaces/workspaces/build/talos_description/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/talos_description")

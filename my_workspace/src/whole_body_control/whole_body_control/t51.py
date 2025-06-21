@@ -216,6 +216,13 @@ class Environment(Node):
         # init StateMachine
         self.state_machine = StateMachine(self.robot, self.simulator)
 
+        # Data recording for plotting
+        self.history_t = []
+        self.history_com = []
+        self.history_zmp = []
+        self.history_cmp = []
+        self.history_cp = []
+
     def update(self):
         # elapsed time
         t = self.simulator.simTime()
@@ -247,8 +254,44 @@ class Environment(Node):
         H_w_lankle = data.oMf[self.robot._model.getFrameId("leg_left_6_joint")]
         H_w_rankle = data.oMf[self.robot._model.getFrameId("leg_right_6_joint")]
 
-        print("Left Ankle Force:", wl_lankle.vector)  # Also add .vector to see the actual force values
-        print("Left Sole Position:", H_w_lsole.translation)
+        # CoM position and velocity
+        com_state = self.tsid_wrapper.comState()
+        com_pos = com_state.pos()
+        com_vel = com_state.vel()
+
+        # Initialize d
+        d_r = 0.1
+        d_l = 0.1
+
+        # Estimate ZMPs in ankle frames
+        p_zmp_r_local = self.estimate_zmp(wr_rankle.angular, wr_rankle.linear, d_r)
+        p_zmp_l_local = self.estimate_zmp(wl_lankle.angular, wl_lankle.linear, d_l)
+        
+        # Transform ZMPs to world frame
+        p_zmp_r_world = H_w_rankle.act(p_zmp_r_local)
+        p_zmp_l_world = H_w_lankle.act(p_zmp_l_local)
+
+        # Estimate combined ZMP
+        f_r_world = H_w_rankle.rotation @ wr_rankle.linear
+        f_l_world = H_w_lankle.rotation @ wl_lankle.linear
+        fz_r = f_r_world[2]
+        fz_l = f_l_world[2]
+        zmp_combined = self.estimate_zmp_combined(p_zmp_r_world, fz_r, p_zmp_l_world, fz_l)
+
+        # Estimate CMP
+        f_total_world = f_r_world + f_l_world
+        cmp = self.estimate_cmp(com_pos, f_total_world)
+
+        # Estimate CP
+        cp = self.estimate_cp_dcm(com_pos, com_vel)
+
+        # Store data for plotting
+        if DO_PLOT:
+            self.history_t.append(t)
+            self.history_com.append(com_pos[:2])
+            self.history_zmp.append(zmp_combined[:2])
+            self.history_cmp.append(cmp[:2])
+            self.history_cp.append(cp[:2])
         
         # command to the robot
         self.robot.setActuatedJointTorques(tau_sol)
@@ -263,6 +306,90 @@ class Environment(Node):
             T_b_w, _ = self.tsid_wrapper.baseState()
             self.robot.publish(T_b_w, tau_sol)
 
+    def estimate_zmp_combined(self, p_r, fz_r, p_l, fz_l):
+        """Estimate the combined ZMP from both feet based on individual ZMPs and vertical forces."""
+        fz_total = fz_r + fz_l
+        if abs(fz_total) < 1e-6:  # Avoid division by zero
+            # If total vertical force is negligible, ZMP is ill-defined.
+            # A reasonable fallback is the midpoint of the individual ZMPs.
+            return (p_r + p_l) / 2.0
+
+        px = (p_r[0] * fz_r + p_l[0] * fz_l) / fz_total
+        py = (p_r[1] * fz_r + p_l[1] * fz_l) / fz_total
+        pz = 0.0
+        return np.array([px, py, pz])
+
+    def estimate_zmp(self, tau, f, d):
+        """Estimate the Zero Moment Point (ZMP) based on the given parameters."""
+        px_foot = (-tau[1] - f[0] * d) / f[2]
+        py_foot = (tau[0] - f[1] * d) / f[2]
+        pz_foot = 0
+        return np.array([px_foot, py_foot, pz_foot])
+
+    def estimate_cmp(self, com_pos, f):
+        """Estimate the Centroidal Moment Pivot (CMP) based on the given parameters."""
+        if abs(f[2]) < 1e-6:
+            return np.array([com_pos[0], com_pos[1], 0.0])
+        cmp_x = com_pos[0] - (f[0] / f[2]) * com_pos[2]
+        cmp_y = com_pos[1] - (f[1] / f[2]) * com_pos[2]
+        cmp_z = 0.0
+        return np.array([cmp_x, cmp_y, cmp_z])
+
+    def estimate_cp_dcm(self, com_pos, com_vel):
+        """Estimate the Capture Point (CP) or Divergent Component of Motion (DCM) based on the given parameters."""
+        g = 9.81  # magnitude of gravity
+        xz = com_pos[2]
+
+
+        omega = np.sqrt(g / xz)
+        # CoM position and velocity projected to the ground
+        xp = com_pos
+        xp[2] = 0 # Ignore the z-component for 2D projection
+        xp_dot = com_vel
+        xp_dot[2] = 0 # Ignore the z-component for 2D projection
+        
+        cp = xp + xp_dot / omega
+        
+        return np.array([cp[0], cp[1], 0.0])
+
+    def plot_data(self):
+        if not self.history_t:
+            return
+
+        # Convert lists to numpy arrays for easier indexing
+        history_com = np.array(self.history_com)
+        history_zmp = np.array(self.history_zmp)
+        history_cmp = np.array(self.history_cmp)
+        history_cp = np.array(self.history_cp)
+
+        plt.figure(figsize=(10, 8))
+
+        plt.subplot(2, 1, 1)
+        plt.plot(self.history_t, history_com[:, 0], label='CoM x')
+        plt.plot(self.history_t, history_zmp[:, 0], label='ZMP x')
+        plt.plot(self.history_t, history_cmp[:, 0], label='CMP x')
+        plt.plot(self.history_t, history_cp[:, 0], label='CP x')
+        plt.legend()
+        plt.xlabel('Time (s)')
+        plt.ylabel('x position (m)')
+        plt.title('X and Y Components of Ground Reference Points and CoM over Time')
+        plt.ylim(-0.5, 0.5)  # Adjust y-limits for better visibility
+        plt.grid(True)
+
+        plt.subplot(2, 1, 2)
+        plt.plot(self.history_t, history_com[:, 1], label='CoM y')
+        plt.plot(self.history_t, history_zmp[:, 1], label='ZMP y')
+        plt.plot(self.history_t, history_cmp[:, 1], label='CMP y')
+        plt.plot(self.history_t, history_cp[:, 1], label='CP y')
+        plt.legend()
+        plt.xlabel('Time (s)')
+        plt.ylabel('y position (m)')
+        plt.ylim(-0.5, 0.5)  # Adjust y-limits for better visibility
+        plt.grid(True)
+
+        plt.tight_layout()
+        plt.show()
+
 
 ################################################################################
 # main
@@ -273,12 +400,21 @@ def main(args=None):
     rclpy.init(args=args)
     env = Environment()
     try:
+        stop_time = -1.0
         while rclpy.ok():
             env.update()
+            # check if state machine is done
+            if env.state_machine.state == "done":
+                if stop_time < 0:
+                    stop_time = env.simulator.simTime() + 2.0
+                if env.simulator.simTime() > stop_time:
+                    break
 
     except (KeyboardInterrupt, ExternalShutdownException):
         pass
     finally:
+        if DO_PLOT:
+            env.plot_data()
         env.destroy_node()
         rclpy.shutdown()
 
