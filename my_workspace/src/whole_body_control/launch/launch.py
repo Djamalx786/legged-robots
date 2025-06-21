@@ -63,11 +63,18 @@ def generate_launch_description():
         output='screen',
         parameters=[{'use_sim_time': False}],
     )
+    t51_node = Node(
+        package='whole_body_control',
+        executable='t51',
+        name='t51',
+        output='screen',
+        parameters=[{'use_sim_time': False}],   
+    )
     # Add the nodes to the launch description
     ld.add_action(robot_state_publisher)
     ld.add_action(rviz_node)
     #ld.add_action(t4_node)
     #ld.add_action(one_leg_stand_node)
-    ld.add_action(squatting_node)
-    
+    #ld.add_action(squatting_node)
+    ld.add_action(t51_node)
     return ld

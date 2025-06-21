@@ -27,6 +27,7 @@ setup(
             't4_standing = whole_body_control.t4_standing:main',
             '02_one_leg_stand = whole_body_control.02_one_leg_stand:main',
             '03_squating = whole_body_control.03_squating:main',
+            't51 = whole_body_control.t51:main',
         ],
     },
 )

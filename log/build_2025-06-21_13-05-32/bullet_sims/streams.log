@@ -1,0 +1,29 @@
+[3.055s] Invoking command in '/workspaces/workspaces/build/bullet_sims': AMENT_PREFIX_PATH=/workspaces/workspaces/install/talos_description:/workspaces/workspaces/install/simulator:/workspaces/workspaces/install/reemc_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/workspaces/workspaces/install/talos_description:/workspaces/workspaces/install/reemc_description:${CMAKE_PREFIX_PATH} PYTHONPATH=/workspaces/workspaces/build/bullet_sims/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspaces/workspaces/install/bullet_sims/lib/python3.12/site-packages:/workspaces/workspaces/build/simulator:/workspaces/workspaces/install/simulator/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /workspaces/workspaces/build/bullet_sims/build --no-deps symlink_data
+[3.721s] running develop
+[4.158s] running egg_info
+[4.159s] creating bullet_sims.egg-info
+[4.209s] writing bullet_sims.egg-info/PKG-INFO
+[4.210s] writing dependency_links to bullet_sims.egg-info/dependency_links.txt
+[4.210s] writing entry points to bullet_sims.egg-info/entry_points.txt
+[4.211s] writing requirements to bullet_sims.egg-info/requires.txt
+[4.211s] writing top-level names to bullet_sims.egg-info/top_level.txt
+[4.212s] writing manifest file 'bullet_sims.egg-info/SOURCES.txt'
+[5.452s] reading manifest file 'bullet_sims.egg-info/SOURCES.txt'
+[5.454s] writing manifest file 'bullet_sims.egg-info/SOURCES.txt'
+[5.565s] running build_ext
+[5.566s] Creating /workspaces/workspaces/install/bullet_sims/lib/python3.12/site-packages/bullet-sims.egg-link (link to .)
+[5.569s] Installing interactive_marker_hand script to /workspaces/workspaces/install/bullet_sims/lib/bullet_sims
+[5.570s] Installing t21 script to /workspaces/workspaces/install/bullet_sims/lib/bullet_sims
+[5.572s] Installing t22 script to /workspaces/workspaces/install/bullet_sims/lib/bullet_sims
+[5.573s] Installing t23 script to /workspaces/workspaces/install/bullet_sims/lib/bullet_sims
+[5.573s] Installing t2_temp script to /workspaces/workspaces/install/bullet_sims/lib/bullet_sims
+[5.573s] Installing t3_main script to /workspaces/workspaces/install/bullet_sims/lib/bullet_sims
+[5.574s] 
+[5.574s] Installed /workspaces/workspaces/build/bullet_sims
+[5.575s] running symlink_data
+[5.575s] creating /workspaces/workspaces/install/bullet_sims/share/ament_index
+[5.575s] creating /workspaces/workspaces/install/bullet_sims/share/ament_index/resource_index
+[5.576s] creating /workspaces/workspaces/install/bullet_sims/share/ament_index/resource_index/packages
+[5.576s] symbolically linking /workspaces/workspaces/build/bullet_sims/resource/bullet_sims -> /workspaces/workspaces/install/bullet_sims/share/ament_index/resource_index/packages
+[5.576s] symbolically linking /workspaces/workspaces/build/bullet_sims/package.xml -> /workspaces/workspaces/install/bullet_sims/share/bullet_sims
+[5.670s] Invoked command in '/workspaces/workspaces/build/bullet_sims' returned '0': AMENT_PREFIX_PATH=/workspaces/workspaces/install/talos_description:/workspaces/workspaces/install/simulator:/workspaces/workspaces/install/reemc_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/workspaces/workspaces/install/talos_description:/workspaces/workspaces/install/reemc_description:${CMAKE_PREFIX_PATH} PYTHONPATH=/workspaces/workspaces/build/bullet_sims/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspaces/workspaces/install/bullet_sims/lib/python3.12/site-packages:/workspaces/workspaces/build/simulator:/workspaces/workspaces/install/simulator/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /workspaces/workspaces/build/bullet_sims/build --no-deps symlink_data

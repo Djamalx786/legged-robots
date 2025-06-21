@@ -17,6 +17,7 @@ whole_body_control/03_squating.py
 whole_body_control/__init__.py
 whole_body_control/config.py
 whole_body_control/t4_standing.py
+whole_body_control/t51.py
 whole_body_control/tsid_wrapper.py
 whole_body_control/vic
 whole_body_control.egg-info/PKG-INFO
@@ -27,6 +28,7 @@ whole_body_control.egg-info/requires.txt
 whole_body_control.egg-info/top_level.txt
 whole_body_control.egg-info/zip-safe
 whole_body_control/__pycache__/02_one_leg_stand.cpython-312.pyc
+whole_body_control/__pycache__/03_squating.cpython-312.pyc
 whole_body_control/__pycache__/__init__.cpython-312.pyc
 whole_body_control/__pycache__/config.cpython-312.pyc
 whole_body_control/__pycache__/t4_standing.cpython-312.pyc
