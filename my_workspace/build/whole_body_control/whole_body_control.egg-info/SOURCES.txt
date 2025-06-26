@@ -14,10 +14,12 @@ share/whole_body_control/hook/pythonpath_develop.sh
 whole_body_control/01_standing.py
 whole_body_control/02_one_leg_stand.py
 whole_body_control/03_squating.py
+whole_body_control/T5.pdf
 whole_body_control/__init__.py
 whole_body_control/config.py
 whole_body_control/t4_standing.py
 whole_body_control/t51.py
+whole_body_control/t52.py
 whole_body_control/tsid_wrapper.py
 whole_body_control/vic
 whole_body_control.egg-info/PKG-INFO

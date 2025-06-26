@@ -1,1 +1,1 @@
-/workspaces/workspaces/my_workspace/build/reemc_description/ament_cmake_environment_hooks/local_setup.sh
+/workspaces/workspaces/legged-robots/my_workspace/build/reemc_description/ament_cmake_environment_hooks/local_setup.sh

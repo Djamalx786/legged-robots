@@ -1,7 +1,7 @@
 Homework Solutions 
 
 
-Exercise 1. 
+Tutorial 1
 a.3) Not all frames are correct. Frame  03, O5 have inconsistent orientations compared to their symmetric counterparts, breaking the expected right-handed coordinate system. (z-axis is flipped)
 a.10) No, they are not exactly the same in the RViz view. When using cube markers, differences in orientation become noticeable because cubes have visible faces and edges that make any rotation around the axes visually apparent.
 b.8) When the cage spins, the force component of the transformed wrench remains constant in the world frame because it is a translational quantity and independent of rotational motion. However, the torque component changes since torque depends on the relative position of the force application point, which varies with the cage's rotation. This happens due to the cross-product relationship between the force vector and the position vector.
@@ -9,7 +9,17 @@ c.8) When the cage spins, the linear component of the transformed wrench stays c
 
 ------
 
-Exercise 2 
+Tutorial 2
 a.8) No, the t2_temp.py script is not a ROS node. It doesn't use any ROS 2-specific features like initializing ROS with rclpy.init() or defining a node using rclpy.node.Node. A proper ROS node would also need to use publishers, subscribers, or services to communicate within the ROS ecosystem. Without those ROS-specific elements, it can't really interact with other ROS nodes or the ROS system.
 
-Exercise 3 
+
+
+Tutorial 3&4: no questions
+
+Tutorial 5:
+4. Which ones of the ground reference points can exist outside the supporting polygon?
+If ZMP goes outside: Falling or unbalanced. CMP goes outside when the desired angular momentum requires it. However, CP goes outside to indicate where the robot should step next! 
+5. Which modality holds higher pushing forces, torque or position hardware interface?
+Usually Torque control can handle higher pushing forces because it provides direct motor control without internal PID limitations that restrict maximum torques in position control. However, while testing I realized that I can apply higher pushing forces when using position control. Can only be a bug in the simulator
+6. Are the torque and position control modalities equivalent with the proposed method? If not, why?
+No, they are not equivalent because position control adds an integration step and internal PID controllers between TSID and the motors, creating different dynamics and slower response compared to torque control's direct command path.

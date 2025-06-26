@@ -1,0 +1,1 @@
+/workspaces/workspaces/legged-robots/build/talos_description/ament_cmake_core/talos_descriptionConfig-version.cmake

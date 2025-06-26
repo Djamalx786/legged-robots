@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_files("/workspaces/workspaces/legged-robots/my_workspace/src/reemc_description" FILES "/workspaces/workspaces/legged-robots/build/reemc_description/ament_cmake_index/share/ament_index/resource_index/packages/reemc_description" "DESTINATION" "share/ament_index/resource_index/packages")

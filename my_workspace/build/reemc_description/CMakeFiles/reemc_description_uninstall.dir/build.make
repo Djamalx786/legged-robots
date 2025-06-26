@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /workspaces/workspaces/my_workspace/src/reemc_description
+CMAKE_SOURCE_DIR = /workspaces/workspaces/legged-robots/my_workspace/src/reemc_description
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /workspaces/workspaces/my_workspace/build/reemc_description
+CMAKE_BINARY_DIR = /workspaces/workspaces/legged-robots/my_workspace/build/reemc_description
 
 # Utility rule file for reemc_description_uninstall.
 
@@ -67,7 +67,7 @@ include CMakeFiles/reemc_description_uninstall.dir/compiler_depend.make
 include CMakeFiles/reemc_description_uninstall.dir/progress.make
 
 CMakeFiles/reemc_description_uninstall:
-	/usr/bin/cmake -P /workspaces/workspaces/my_workspace/build/reemc_description/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
+	/usr/bin/cmake -P /workspaces/workspaces/legged-robots/my_workspace/build/reemc_description/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
 
 reemc_description_uninstall: CMakeFiles/reemc_description_uninstall
 reemc_description_uninstall: CMakeFiles/reemc_description_uninstall.dir/build.make
@@ -82,6 +82,6 @@ CMakeFiles/reemc_description_uninstall.dir/clean:
 .PHONY : CMakeFiles/reemc_description_uninstall.dir/clean
 
 CMakeFiles/reemc_description_uninstall.dir/depend:
-	cd /workspaces/workspaces/my_workspace/build/reemc_description && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /workspaces/workspaces/my_workspace/src/reemc_description /workspaces/workspaces/my_workspace/src/reemc_description /workspaces/workspaces/my_workspace/build/reemc_description /workspaces/workspaces/my_workspace/build/reemc_description /workspaces/workspaces/my_workspace/build/reemc_description/CMakeFiles/reemc_description_uninstall.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /workspaces/workspaces/legged-robots/my_workspace/build/reemc_description && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /workspaces/workspaces/legged-robots/my_workspace/src/reemc_description /workspaces/workspaces/legged-robots/my_workspace/src/reemc_description /workspaces/workspaces/legged-robots/my_workspace/build/reemc_description /workspaces/workspaces/legged-robots/my_workspace/build/reemc_description /workspaces/workspaces/legged-robots/my_workspace/build/reemc_description/CMakeFiles/reemc_description_uninstall.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/reemc_description_uninstall.dir/depend
 

@@ -23,7 +23,7 @@ function(ament_cmake_symlink_install_directory cmake_current_source_dir)
 
   # make destination absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/workspaces/workspaces/my_workspace/install/reemc_description/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -123,7 +123,7 @@ function(ament_cmake_symlink_install_files cmake_current_source_dir)
 
   # make destination an absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/workspaces/workspaces/my_workspace/install/reemc_description/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -181,7 +181,7 @@ function(ament_cmake_symlink_install_programs cmake_current_source_dir)
 
   # make destination an absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/workspaces/workspaces/my_workspace/install/reemc_description/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -255,7 +255,7 @@ function(ament_cmake_symlink_install_targets)
 
     # make destination an absolute path and ensure that it exists
     if(NOT IS_ABSOLUTE "${destination}")
-      set(destination "/workspaces/workspaces/my_workspace/install/reemc_description/${destination}")
+      set(destination "/workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/${destination}")
     endif()
     if(NOT EXISTS "${destination}")
       file(MAKE_DIRECTORY "${destination}")
@@ -315,46 +315,46 @@ message(STATUS "Execute custom install script")
 # begin of custom install code
 
 # install(DIRECTORY "meshes" "robots" "DESTINATION" "share/reemc_description")
-ament_cmake_symlink_install_directory("/workspaces/workspaces/my_workspace/src/reemc_description" DIRECTORY "meshes" "robots" "DESTINATION" "share/reemc_description")
+ament_cmake_symlink_install_directory("/workspaces/workspaces/legged-robots/my_workspace/src/reemc_description" DIRECTORY "meshes" "robots" "DESTINATION" "share/reemc_description")
 
-# install(FILES "/workspaces/workspaces/my_workspace/build/reemc_description/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/reemc_description" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
-include("/workspaces/workspaces/my_workspace/build/reemc_description/ament_cmake_symlink_install_files_0_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
+# install(FILES "/workspaces/workspaces/legged-robots/my_workspace/build/reemc_description/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/reemc_description" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
+include("/workspaces/workspaces/legged-robots/my_workspace/build/reemc_description/ament_cmake_symlink_install_files_0_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
-# install(FILES "/workspaces/workspaces/my_workspace/build/reemc_description/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/reemc_description" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
-include("/workspaces/workspaces/my_workspace/build/reemc_description/ament_cmake_symlink_install_files_1_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
+# install(FILES "/workspaces/workspaces/legged-robots/my_workspace/build/reemc_description/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/reemc_description" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
+include("/workspaces/workspaces/legged-robots/my_workspace/build/reemc_description/ament_cmake_symlink_install_files_1_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
 # install(FILES "/opt/ros/rolling/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/reemc_description/environment")
-include("/workspaces/workspaces/my_workspace/build/reemc_description/ament_cmake_symlink_install_files_2_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
+include("/workspaces/workspaces/legged-robots/my_workspace/build/reemc_description/ament_cmake_symlink_install_files_2_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
-# install(FILES "/workspaces/workspaces/my_workspace/build/reemc_description/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/reemc_description/environment")
-include("/workspaces/workspaces/my_workspace/build/reemc_description/ament_cmake_symlink_install_files_3_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
+# install(FILES "/workspaces/workspaces/legged-robots/my_workspace/build/reemc_description/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/reemc_description/environment")
+include("/workspaces/workspaces/legged-robots/my_workspace/build/reemc_description/ament_cmake_symlink_install_files_3_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
 # install(FILES "/opt/ros/rolling/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/reemc_description/environment")
-include("/workspaces/workspaces/my_workspace/build/reemc_description/ament_cmake_symlink_install_files_4_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
+include("/workspaces/workspaces/legged-robots/my_workspace/build/reemc_description/ament_cmake_symlink_install_files_4_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
-# install(FILES "/workspaces/workspaces/my_workspace/build/reemc_description/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/reemc_description/environment")
-include("/workspaces/workspaces/my_workspace/build/reemc_description/ament_cmake_symlink_install_files_5_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
+# install(FILES "/workspaces/workspaces/legged-robots/my_workspace/build/reemc_description/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/reemc_description/environment")
+include("/workspaces/workspaces/legged-robots/my_workspace/build/reemc_description/ament_cmake_symlink_install_files_5_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
-# install(FILES "/workspaces/workspaces/my_workspace/build/reemc_description/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/reemc_description")
-include("/workspaces/workspaces/my_workspace/build/reemc_description/ament_cmake_symlink_install_files_6_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
+# install(FILES "/workspaces/workspaces/legged-robots/my_workspace/build/reemc_description/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/reemc_description")
+include("/workspaces/workspaces/legged-robots/my_workspace/build/reemc_description/ament_cmake_symlink_install_files_6_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
-# install(FILES "/workspaces/workspaces/my_workspace/build/reemc_description/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/reemc_description")
-include("/workspaces/workspaces/my_workspace/build/reemc_description/ament_cmake_symlink_install_files_7_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
+# install(FILES "/workspaces/workspaces/legged-robots/my_workspace/build/reemc_description/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/reemc_description")
+include("/workspaces/workspaces/legged-robots/my_workspace/build/reemc_description/ament_cmake_symlink_install_files_7_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
-# install(FILES "/workspaces/workspaces/my_workspace/build/reemc_description/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/reemc_description")
-include("/workspaces/workspaces/my_workspace/build/reemc_description/ament_cmake_symlink_install_files_8_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
+# install(FILES "/workspaces/workspaces/legged-robots/my_workspace/build/reemc_description/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/reemc_description")
+include("/workspaces/workspaces/legged-robots/my_workspace/build/reemc_description/ament_cmake_symlink_install_files_8_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
-# install(FILES "/workspaces/workspaces/my_workspace/build/reemc_description/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/reemc_description")
-include("/workspaces/workspaces/my_workspace/build/reemc_description/ament_cmake_symlink_install_files_9_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
+# install(FILES "/workspaces/workspaces/legged-robots/my_workspace/build/reemc_description/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/reemc_description")
+include("/workspaces/workspaces/legged-robots/my_workspace/build/reemc_description/ament_cmake_symlink_install_files_9_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
-# install(FILES "/workspaces/workspaces/my_workspace/build/reemc_description/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/reemc_description")
-include("/workspaces/workspaces/my_workspace/build/reemc_description/ament_cmake_symlink_install_files_10_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
+# install(FILES "/workspaces/workspaces/legged-robots/my_workspace/build/reemc_description/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/reemc_description")
+include("/workspaces/workspaces/legged-robots/my_workspace/build/reemc_description/ament_cmake_symlink_install_files_10_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
-# install(FILES "/workspaces/workspaces/my_workspace/build/reemc_description/ament_cmake_index/share/ament_index/resource_index/packages/reemc_description" "DESTINATION" "share/ament_index/resource_index/packages")
-include("/workspaces/workspaces/my_workspace/build/reemc_description/ament_cmake_symlink_install_files_11_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
+# install(FILES "/workspaces/workspaces/legged-robots/my_workspace/build/reemc_description/ament_cmake_index/share/ament_index/resource_index/packages/reemc_description" "DESTINATION" "share/ament_index/resource_index/packages")
+include("/workspaces/workspaces/legged-robots/my_workspace/build/reemc_description/ament_cmake_symlink_install_files_11_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
-# install(FILES "/workspaces/workspaces/my_workspace/build/reemc_description/ament_cmake_core/reemc_descriptionConfig.cmake" "/workspaces/workspaces/my_workspace/build/reemc_description/ament_cmake_core/reemc_descriptionConfig-version.cmake" "DESTINATION" "share/reemc_description/cmake")
-include("/workspaces/workspaces/my_workspace/build/reemc_description/ament_cmake_symlink_install_files_12_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
+# install(FILES "/workspaces/workspaces/legged-robots/my_workspace/build/reemc_description/ament_cmake_core/reemc_descriptionConfig.cmake" "/workspaces/workspaces/legged-robots/my_workspace/build/reemc_description/ament_cmake_core/reemc_descriptionConfig-version.cmake" "DESTINATION" "share/reemc_description/cmake")
+include("/workspaces/workspaces/legged-robots/my_workspace/build/reemc_description/ament_cmake_symlink_install_files_12_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
-# install(FILES "/workspaces/workspaces/my_workspace/src/reemc_description/package.xml" "DESTINATION" "share/reemc_description")
-include("/workspaces/workspaces/my_workspace/build/reemc_description/ament_cmake_symlink_install_files_13_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
+# install(FILES "/workspaces/workspaces/legged-robots/my_workspace/src/reemc_description/package.xml" "DESTINATION" "share/reemc_description")
+include("/workspaces/workspaces/legged-robots/my_workspace/build/reemc_description/ament_cmake_symlink_install_files_13_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
