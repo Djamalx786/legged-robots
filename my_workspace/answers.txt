@@ -18,7 +18,7 @@ Tutorial 3&4: no questions
 
 Tutorial 5:
 4. Which ones of the ground reference points can exist outside the supporting polygon?
-If ZMP goes outside: Falling or unbalanced. CMP goes outside when the desired angular momentum requires it. However, CP goes outside to indicate where the robot should step next! 
+If ZMP goes outside: Falling or unbalanced. CMP goes outside when the desired angular momentum requires it. However, CP goes outside to indicate where the robot should step next to stop! 
 5. Which modality holds higher pushing forces, torque or position hardware interface?
 Usually Torque control can handle higher pushing forces because it provides direct motor control without internal PID limitations that restrict maximum torques in position control. However, while testing I realized that I can apply higher pushing forces when using position control. Can only be a bug in the simulator
 6. Are the torque and position control modalities equivalent with the proposed method? If not, why?
