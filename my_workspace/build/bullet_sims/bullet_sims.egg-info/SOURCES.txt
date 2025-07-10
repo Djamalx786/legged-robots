@@ -1,4 +1,3 @@
-colcon_build.rc
 colcon_command_prefix_setup_py.sh
 colcon_command_prefix_setup_py.sh.env
 package.xml
@@ -29,6 +28,3 @@ bullet_sims/__pycache__/t3_main.cpython-312.pyc
 prefix_override/sitecustomize.py
 prefix_override/__pycache__/sitecustomize.cpython-312.pyc
 resource/bullet_sims
-share/bullet_sims/hook/pythonpath_develop.dsv
-share/bullet_sims/hook/pythonpath_develop.ps1
-share/bullet_sims/hook/pythonpath_develop.sh

@@ -21,6 +21,7 @@ setup(
     entry_points={
         'console_scripts': [
             'footstep_planner = walking.footstep_planner:main',
+            'walking = walking.walking:main',
         ],
     },
 )

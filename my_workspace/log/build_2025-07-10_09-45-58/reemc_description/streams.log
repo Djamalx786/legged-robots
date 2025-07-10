@@ -1,0 +1,125 @@
+[0.013s] Invoking command in '/workspaces/workspaces/legged-robots/my_workspace/build/reemc_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspaces/workspaces/legged-robots/my_workspace/install/whole_body_control:/workspaces/workspaces/legged-robots/my_workspace/install/walking:/workspaces/workspaces/legged-robots/my_workspace/install/bullet_sims:/workspaces/workspaces/legged-robots/my_workspace/install/simulator:/workspaces/workspaces/legged-robots/my_workspace/install/ros_visuals:/opt/ros/rolling /usr/bin/cmake /workspaces/workspaces/legged-robots/my_workspace/src/reemc_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/workspaces/workspaces/legged-robots/my_workspace/install/reemc_description
+[0.148s] -- The C compiler identification is GNU 13.3.0
+[0.160s] -- The CXX compiler identification is GNU 13.3.0
+[0.176s] -- Detecting C compiler ABI info
+[0.254s] -- Detecting C compiler ABI info - done
+[0.261s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.261s] -- Detecting C compile features
+[0.265s] -- Detecting C compile features - done
+[0.278s] -- Detecting CXX compiler ABI info
+[0.359s] -- Detecting CXX compiler ABI info - done
+[0.367s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.367s] -- Detecting CXX compile features
+[0.367s] -- Detecting CXX compile features - done
+[0.383s] -- Found ament_cmake: 2.7.2 (/opt/ros/rolling/share/ament_cmake/cmake)
+[0.546s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.618s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.684s] -- Found ament_lint_auto: 0.19.1 (/opt/ros/rolling/share/ament_lint_auto/cmake)
+[0.752s] -- Configuring done (0.7s)
+[0.754s] -- Generating done (0.0s)
+[0.756s] -- Build files have been written to: /workspaces/workspaces/legged-robots/my_workspace/build/reemc_description
+[0.761s] Invoked command in '/workspaces/workspaces/legged-robots/my_workspace/build/reemc_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspaces/workspaces/legged-robots/my_workspace/install/whole_body_control:/workspaces/workspaces/legged-robots/my_workspace/install/walking:/workspaces/workspaces/legged-robots/my_workspace/install/bullet_sims:/workspaces/workspaces/legged-robots/my_workspace/install/simulator:/workspaces/workspaces/legged-robots/my_workspace/install/ros_visuals:/opt/ros/rolling /usr/bin/cmake /workspaces/workspaces/legged-robots/my_workspace/src/reemc_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/workspaces/workspaces/legged-robots/my_workspace/install/reemc_description
+[0.763s] Invoking command in '/workspaces/workspaces/legged-robots/my_workspace/build/reemc_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspaces/workspaces/legged-robots/my_workspace/install/whole_body_control:/workspaces/workspaces/legged-robots/my_workspace/install/walking:/workspaces/workspaces/legged-robots/my_workspace/install/bullet_sims:/workspaces/workspaces/legged-robots/my_workspace/install/simulator:/workspaces/workspaces/legged-robots/my_workspace/install/ros_visuals:/opt/ros/rolling /usr/bin/cmake --build /workspaces/workspaces/legged-robots/my_workspace/build/reemc_description -- -j24 -l24
+[0.809s] Invoked command in '/workspaces/workspaces/legged-robots/my_workspace/build/reemc_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspaces/workspaces/legged-robots/my_workspace/install/whole_body_control:/workspaces/workspaces/legged-robots/my_workspace/install/walking:/workspaces/workspaces/legged-robots/my_workspace/install/bullet_sims:/workspaces/workspaces/legged-robots/my_workspace/install/simulator:/workspaces/workspaces/legged-robots/my_workspace/install/ros_visuals:/opt/ros/rolling /usr/bin/cmake --build /workspaces/workspaces/legged-robots/my_workspace/build/reemc_description -- -j24 -l24
+[0.819s] Invoking command in '/workspaces/workspaces/legged-robots/my_workspace/build/reemc_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspaces/workspaces/legged-robots/my_workspace/install/whole_body_control:/workspaces/workspaces/legged-robots/my_workspace/install/walking:/workspaces/workspaces/legged-robots/my_workspace/install/bullet_sims:/workspaces/workspaces/legged-robots/my_workspace/install/simulator:/workspaces/workspaces/legged-robots/my_workspace/install/ros_visuals:/opt/ros/rolling /usr/bin/cmake --install /workspaces/workspaces/legged-robots/my_workspace/build/reemc_description
+[0.825s] -- Install configuration: ""
+[0.826s] -- Execute custom install script
+[0.827s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_1.dae
+[0.834s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_1_collision.stl
+[0.847s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_1_color.png
+[0.855s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_1_normals.png
+[0.864s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_1_specular.png
+[0.871s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_2.dae
+[0.878s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_2_collision.stl
+[0.884s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_2_color.png
+[0.893s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_2_normals.png
+[0.897s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_2_specular.png
+[0.910s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_3.dae
+[0.920s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_3_collision.stl
+[0.931s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_3_color.png
+[0.941s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_3_normals.png
+[0.948s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_3_specular.png
+[0.955s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_4.dae
+[0.961s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_4_collision.stl
+[0.969s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_4_color.png
+[0.977s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_4_normals.png
+[0.985s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_4_specular.png
+[0.991s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_5.dae
+[0.996s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_5_collision.stl
+[1.004s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_6.dae
+[1.010s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_6_collision.stl
+[1.018s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_6_color.png
+[1.027s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_6_normals.png
+[1.033s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/arm/arm_6_specular.png
+[1.042s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/base/base.dae
+[1.052s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/base/base_collision.stl
+[1.056s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/chessboard/chessboard.dae
+[1.064s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/chessboard/chessboard.png
+[1.072s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/hand/hand_finger_1.dae
+[1.081s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/hand/hand_finger_1_collision.stl
+[1.088s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/hand/hand_finger_1_color.png
+[1.096s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/hand/hand_finger_1_normals.png
+[1.105s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/hand/hand_finger_1_specular.png
+[1.114s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/hand/hand_finger_2.dae
+[1.122s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/hand/hand_finger_2_collision.stl
+[1.133s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/hand/hand_finger_2_color.png
+[1.145s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/hand/hand_finger_2_normals.png
+[1.155s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/hand/hand_finger_2_specular.png
+[1.163s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/hand/hand_finger_3.dae
+[1.170s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/hand/hand_finger_3_collision.stl
+[1.176s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/hand/hand_finger_3_color.png
+[1.183s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/hand/hand_finger_3_normals.png
+[1.190s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/hand/hand_finger_3_specular.png
+[1.197s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/hand/hand_palm.dae
+[1.204s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/hand/hand_palm_collision.stl
+[1.211s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/hand/hand_palm_color.png
+[1.219s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/hand/hand_palm_normals.png
+[1.228s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/hand/hand_palm_specular.png
+[1.234s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/hand/hand_thumb.dae
+[1.242s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/hand/hand_thumb_collision.stl
+[1.248s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/hand/hand_thumb_color.png
+[1.255s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/hand/hand_thumb_normals.png
+[1.263s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/hand/hand_thumb_specular.png
+[1.271s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/head/head_1.dae
+[1.280s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/head/head_1_collision.stl
+[1.287s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/head/head_2_collision.stl
+[1.295s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/head/head_2_v0.dae
+[1.303s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/head/head_2_v1.stl
+[1.310s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/hey5/finger_abd_collision.stl
+[1.317s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/hey5/finger_flex_collision.stl
+[1.326s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/hey5/finger_flex_tip_collision.stl
+[1.331s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/hey5/palm.stl
+[1.339s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/hey5/palm_collision.stl
+[1.345s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/hey5/thumb_abd_collision.stl
+[1.352s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/kinect.dae
+[1.360s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/kinect.tga
+[1.366s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/leg/leg_1.dae
+[1.374s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/leg/leg_1_collision.stl
+[1.381s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/leg/leg_3.dae
+[1.387s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/leg/leg_3_collision.stl
+[1.394s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/leg/leg_4.dae
+[1.401s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/leg/leg_4_collision.stl
+[1.409s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/leg/leg_6.dae
+[1.416s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/leg/r_foot.dae
+[1.424s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/sensors/urg-04lx-ug01.stl
+[1.431s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/sensors/xtion_pro_live/xtion_pro_live.dae
+[1.438s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/sensors/xtion_pro_live/xtion_pro_live.png
+[1.445s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/torso/torso_2.dae
+[1.451s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/meshes/torso/torso_2_collision.stl
+[1.458s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/robots/reemc.urdf
+[1.465s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/ament_index/resource_index/package_run_dependencies/reemc_description
+[1.474s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/ament_index/resource_index/parent_prefix_path/reemc_description
+[1.482s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/environment/ament_prefix_path.sh
+[1.489s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/environment/ament_prefix_path.dsv
+[1.497s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/environment/path.sh
+[1.503s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/environment/path.dsv
+[1.513s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/local_setup.bash
+[1.520s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/local_setup.sh
+[1.529s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/local_setup.zsh
+[1.536s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/local_setup.dsv
+[1.543s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/package.dsv
+[1.551s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/ament_index/resource_index/packages/reemc_description
+[1.561s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/cmake/reemc_descriptionConfig.cmake
+[1.567s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/cmake/reemc_descriptionConfig-version.cmake
+[1.577s] -- Symlinking: /workspaces/workspaces/legged-robots/my_workspace/install/reemc_description/share/reemc_description/package.xml
+[1.587s] Invoked command in '/workspaces/workspaces/legged-robots/my_workspace/build/reemc_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspaces/workspaces/legged-robots/my_workspace/install/whole_body_control:/workspaces/workspaces/legged-robots/my_workspace/install/walking:/workspaces/workspaces/legged-robots/my_workspace/install/bullet_sims:/workspaces/workspaces/legged-robots/my_workspace/install/simulator:/workspaces/workspaces/legged-robots/my_workspace/install/ros_visuals:/opt/ros/rolling /usr/bin/cmake --install /workspaces/workspaces/legged-robots/my_workspace/build/reemc_description
