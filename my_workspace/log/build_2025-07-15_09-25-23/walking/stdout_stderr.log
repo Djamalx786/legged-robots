@@ -1,0 +1,22 @@
+running develop
+running egg_info
+creating walking.egg-info
+writing walking.egg-info/PKG-INFO
+writing dependency_links to walking.egg-info/dependency_links.txt
+writing entry points to walking.egg-info/entry_points.txt
+writing requirements to walking.egg-info/requires.txt
+writing top-level names to walking.egg-info/top_level.txt
+writing manifest file 'walking.egg-info/SOURCES.txt'
+writing manifest file 'walking.egg-info/SOURCES.txt'
+running build_ext
+Creating /workspaces/legged-robots/my_workspace/install/walking/lib/python3.12/site-packages/walking.egg-link (link to .)
+Installing footstep_planner script to /workspaces/legged-robots/my_workspace/install/walking/lib/walking
+Installing walking script to /workspaces/legged-robots/my_workspace/install/walking/lib/walking
+
+Installed /workspaces/legged-robots/my_workspace/build/walking
+running symlink_data
+creating /workspaces/legged-robots/my_workspace/install/walking/share/ament_index
+creating /workspaces/legged-robots/my_workspace/install/walking/share/ament_index/resource_index
+creating /workspaces/legged-robots/my_workspace/install/walking/share/ament_index/resource_index/packages
+symbolically linking /workspaces/legged-robots/my_workspace/build/walking/resource/walking -> /workspaces/legged-robots/my_workspace/install/walking/share/ament_index/resource_index/packages
+symbolically linking /workspaces/legged-robots/my_workspace/build/walking/package.xml -> /workspaces/legged-robots/my_workspace/install/walking/share/walking

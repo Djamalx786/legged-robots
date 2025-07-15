@@ -1,0 +1,24 @@
+[0.609s] Invoking command in '/workspaces/legged-robots/my_workspace/build/walking': AMENT_PREFIX_PATH=/workspaces/legged-robots/my_workspace/install/talos_description:/workspaces/legged-robots/my_workspace/install/simulator:/workspaces/legged-robots/my_workspace/install/reemc_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/workspaces/legged-robots/my_workspace/install/talos_description:/workspaces/legged-robots/my_workspace/install/reemc_description:${CMAKE_PREFIX_PATH} PYTHONPATH=/workspaces/legged-robots/my_workspace/build/walking/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspaces/legged-robots/my_workspace/install/walking/lib/python3.12/site-packages:/workspaces/legged-robots/my_workspace/build/simulator:/workspaces/legged-robots/my_workspace/install/simulator/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /workspaces/legged-robots/my_workspace/build/walking/build --no-deps symlink_data
+[0.763s] running develop
+[0.845s] running egg_info
+[0.845s] creating walking.egg-info
+[0.853s] writing walking.egg-info/PKG-INFO
+[0.853s] writing dependency_links to walking.egg-info/dependency_links.txt
+[0.856s] writing entry points to walking.egg-info/entry_points.txt
+[0.856s] writing requirements to walking.egg-info/requires.txt
+[0.856s] writing top-level names to walking.egg-info/top_level.txt
+[0.856s] writing manifest file 'walking.egg-info/SOURCES.txt'
+[1.026s] writing manifest file 'walking.egg-info/SOURCES.txt'
+[1.036s] running build_ext
+[1.036s] Creating /workspaces/legged-robots/my_workspace/install/walking/lib/python3.12/site-packages/walking.egg-link (link to .)
+[1.036s] Installing footstep_planner script to /workspaces/legged-robots/my_workspace/install/walking/lib/walking
+[1.036s] Installing walking script to /workspaces/legged-robots/my_workspace/install/walking/lib/walking
+[1.037s] 
+[1.037s] Installed /workspaces/legged-robots/my_workspace/build/walking
+[1.037s] running symlink_data
+[1.037s] creating /workspaces/legged-robots/my_workspace/install/walking/share/ament_index
+[1.037s] creating /workspaces/legged-robots/my_workspace/install/walking/share/ament_index/resource_index
+[1.037s] creating /workspaces/legged-robots/my_workspace/install/walking/share/ament_index/resource_index/packages
+[1.037s] symbolically linking /workspaces/legged-robots/my_workspace/build/walking/resource/walking -> /workspaces/legged-robots/my_workspace/install/walking/share/ament_index/resource_index/packages
+[1.037s] symbolically linking /workspaces/legged-robots/my_workspace/build/walking/package.xml -> /workspaces/legged-robots/my_workspace/install/walking/share/walking
+[1.054s] Invoked command in '/workspaces/legged-robots/my_workspace/build/walking' returned '0': AMENT_PREFIX_PATH=/workspaces/legged-robots/my_workspace/install/talos_description:/workspaces/legged-robots/my_workspace/install/simulator:/workspaces/legged-robots/my_workspace/install/reemc_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/workspaces/legged-robots/my_workspace/install/talos_description:/workspaces/legged-robots/my_workspace/install/reemc_description:${CMAKE_PREFIX_PATH} PYTHONPATH=/workspaces/legged-robots/my_workspace/build/walking/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspaces/legged-robots/my_workspace/install/walking/lib/python3.12/site-packages:/workspaces/legged-robots/my_workspace/build/simulator:/workspaces/legged-robots/my_workspace/install/simulator/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /workspaces/legged-robots/my_workspace/build/walking/build --no-deps symlink_data

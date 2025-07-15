@@ -1,8 +1,8 @@
-# Install script for directory: /workspaces/workspaces/legged-robots/my_workspace/src/reemc_description
+# Install script for directory: /workspaces/legged-robots/my_workspace/src/reemc_description
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/workspaces/workspaces/legged-robots/my_workspace/install/reemc_description")
+  set(CMAKE_INSTALL_PREFIX "/workspaces/legged-robots/my_workspace/install/reemc_description")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -43,7 +43,7 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  include("/workspaces/workspaces/legged-robots/my_workspace/build/reemc_description/ament_cmake_symlink_install/ament_cmake_symlink_install.cmake")
+  include("/workspaces/legged-robots/my_workspace/build/reemc_description/ament_cmake_symlink_install/ament_cmake_symlink_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -54,5 +54,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/workspaces/workspaces/legged-robots/my_workspace/build/reemc_description/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/workspaces/legged-robots/my_workspace/build/reemc_description/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

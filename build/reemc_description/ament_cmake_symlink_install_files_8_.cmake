@@ -1,1 +1,0 @@
-ament_cmake_symlink_install_files("/workspaces/workspaces/legged-robots/my_workspace/src/reemc_description" FILES "/workspaces/workspaces/legged-robots/build/reemc_description/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/reemc_description")

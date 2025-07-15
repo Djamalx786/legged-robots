@@ -1,0 +1,52 @@
+[0.119s] Invoking command in '/workspaces/legged-robots/my_workspace/build/ainex_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/rolling /usr/bin/cmake /workspaces/legged-robots/my_workspace/src/ainex_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/workspaces/legged-robots/my_workspace/install/ainex_description
+[0.152s] -- The C compiler identification is GNU 13.3.0
+[0.186s] -- The CXX compiler identification is GNU 13.3.0
+[0.197s] -- Detecting C compiler ABI info
+[0.272s] -- Detecting C compiler ABI info - done
+[0.276s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.276s] -- Detecting C compile features
+[0.276s] -- Detecting C compile features - done
+[0.283s] -- Detecting CXX compiler ABI info
+[0.361s] -- Detecting CXX compiler ABI info - done
+[0.367s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.367s] -- Detecting CXX compile features
+[0.367s] -- Detecting CXX compile features - done
+[0.371s] -- Found ament_cmake: 2.7.2 (/opt/ros/rolling/share/ament_cmake/cmake)
+[0.492s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.543s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.596s] -- Found urdf: 2.12.2 (/opt/ros/rolling/share/urdf/cmake)
+[0.619s] -- Found xacro: 2.0.13 (/opt/ros/rolling/share/xacro/cmake)
+[0.622s] -- Found ament_lint_auto: 0.19.1 (/opt/ros/rolling/share/ament_lint_auto/cmake)
+[0.717s] -- Added test 'lint_cmake' to check CMake code style
+[0.717s] -- Added test 'xmllint' to check XML markup files
+[0.718s] -- Configuring done (0.6s)
+[0.721s] -- Generating done (0.0s)
+[0.722s] -- Build files have been written to: /workspaces/legged-robots/my_workspace/build/ainex_description
+[0.728s] Invoked command in '/workspaces/legged-robots/my_workspace/build/ainex_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/rolling /usr/bin/cmake /workspaces/legged-robots/my_workspace/src/ainex_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/workspaces/legged-robots/my_workspace/install/ainex_description
+[0.729s] Invoking command in '/workspaces/legged-robots/my_workspace/build/ainex_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/rolling /usr/bin/cmake --build /workspaces/legged-robots/my_workspace/build/ainex_description -- -j24 -l24
+[0.757s] Invoked command in '/workspaces/legged-robots/my_workspace/build/ainex_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/rolling /usr/bin/cmake --build /workspaces/legged-robots/my_workspace/build/ainex_description -- -j24 -l24
+[0.758s] Invoking command in '/workspaces/legged-robots/my_workspace/build/ainex_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/rolling /usr/bin/cmake --install /workspaces/legged-robots/my_workspace/build/ainex_description
+[0.763s] -- Install configuration: ""
+[0.763s] -- Execute custom install script
+[0.764s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/robots/ainex.urdf
+[0.770s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/robots/ainex.urdf.xacro
+[0.776s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/robots/ainex.xacro
+[0.782s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/robots/gazebo.xacro
+[0.788s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/robots/materials.xacro
+[0.795s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/robots/transmissions.xacro
+[0.801s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ament_index/resource_index/package_run_dependencies/ainex_description
+[0.809s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ament_index/resource_index/parent_prefix_path/ainex_description
+[0.818s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/environment/ament_prefix_path.sh
+[0.825s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/environment/ament_prefix_path.dsv
+[0.830s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/environment/path.sh
+[0.837s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/environment/path.dsv
+[0.845s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/local_setup.bash
+[0.853s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/local_setup.sh
+[0.860s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/local_setup.zsh
+[0.866s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/local_setup.dsv
+[0.873s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/package.dsv
+[0.880s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ament_index/resource_index/packages/ainex_description
+[0.886s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/cmake/ainex_descriptionConfig.cmake
+[0.895s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/cmake/ainex_descriptionConfig-version.cmake
+[0.897s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/package.xml
+[0.903s] Invoked command in '/workspaces/legged-robots/my_workspace/build/ainex_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/rolling /usr/bin/cmake --install /workspaces/legged-robots/my_workspace/build/ainex_description

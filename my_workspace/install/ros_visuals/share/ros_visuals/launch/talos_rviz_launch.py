@@ -1,1 +1,1 @@
-/workspaces/workspaces/legged-robots/my_workspace/build/ros_visuals/launch/talos_rviz_launch.py
+/workspaces/legged-robots/my_workspace/build/ros_visuals/launch/talos_rviz_launch.py

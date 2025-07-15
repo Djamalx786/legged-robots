@@ -235,8 +235,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.28.3/CMakeSystem.cmake"
   "ament_cmake_core/package.cmake"
   "ament_cmake_package_templates/templates.cmake"
-  "/workspaces/workspaces/legged-robots/my_workspace/src/reemc_description/CMakeLists.txt"
-  "/workspaces/workspaces/legged-robots/my_workspace/src/reemc_description/package.xml"
+  "/workspaces/legged-robots/my_workspace/src/reemc_description/CMakeLists.txt"
+  "/workspaces/legged-robots/my_workspace/src/reemc_description/package.xml"
   )
 
 # The corresponding makefile is:

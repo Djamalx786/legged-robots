@@ -34,12 +34,12 @@ DO_PLOT = True
 ################################################################################
 
 
-class Talos(Robot):
+class Ainex(Robot):  # Change from Talos to Ainex
     def __init__(self, simulator, urdf, model, node, q=None, verbose=True, useFixedBase=True):
         # call base class constructor
 
-        # Initial condition for the simulator an model
-        z_init = 1.15
+        # Initial condition for the simulator and model - lower for Ainex
+        z_init = 0.3  # Change from 1.15 to 0.3 (Ainex is smaller)
 
         super().__init__(
             simulator,
@@ -111,11 +111,11 @@ class Environment(Node):
         # init Simulator
         self.simulator = PybulletWrapper()
 
-        q_init = np.hstack([np.array([0, 0, 1.15, 0, 0, 0, 1]),
+        q_init = np.hstack([np.array([0, 0, 0.3, 0, 0, 0, 1]),  # Lower initial height
                            np.zeros_like(conf.q_actuated_home)])
 
-        # init ROBOT
-        self.robot = Talos(
+        # init ROBOT - change class name
+        self.robot = Ainex(  # Change from Talos to Ainex
             self.simulator,
             conf.urdf,
             self.tsid_wrapper.model,

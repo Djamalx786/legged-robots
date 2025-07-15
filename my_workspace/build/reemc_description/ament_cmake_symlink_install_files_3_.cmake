@@ -1,1 +1,1 @@
-ament_cmake_symlink_install_files("/workspaces/workspaces/legged-robots/my_workspace/src/reemc_description" FILES "/workspaces/workspaces/legged-robots/my_workspace/build/reemc_description/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/reemc_description/environment")
+ament_cmake_symlink_install_files("/workspaces/legged-robots/my_workspace/src/reemc_description" FILES "/workspaces/legged-robots/my_workspace/build/reemc_description/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/reemc_description/environment")

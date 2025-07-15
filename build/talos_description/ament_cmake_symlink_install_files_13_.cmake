@@ -1,1 +1,0 @@
-ament_cmake_symlink_install_files("/workspaces/workspaces/legged-robots/my_workspace/src/talos_description" FILES "/workspaces/workspaces/legged-robots/my_workspace/src/talos_description/package.xml" "DESTINATION" "share/talos_description")

@@ -1,1 +1,0 @@
-/workspaces/workspaces/legged-robots/my_workspace/src/ros_visuals/launch/talos_control_launch.py

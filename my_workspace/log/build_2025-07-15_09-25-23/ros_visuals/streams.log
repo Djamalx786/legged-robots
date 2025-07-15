@@ -1,0 +1,31 @@
+[0.528s] Invoking command in '/workspaces/legged-robots/my_workspace/build/ros_visuals': PYTHONPATH=/workspaces/legged-robots/my_workspace/build/ros_visuals/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspaces/legged-robots/my_workspace/install/ros_visuals/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /workspaces/legged-robots/my_workspace/build/ros_visuals/build --no-deps symlink_data
+[0.700s] running develop
+[0.787s] running egg_info
+[0.787s] creating ros_visuals.egg-info
+[0.795s] writing ros_visuals.egg-info/PKG-INFO
+[0.796s] writing dependency_links to ros_visuals.egg-info/dependency_links.txt
+[0.796s] writing entry points to ros_visuals.egg-info/entry_points.txt
+[0.796s] writing requirements to ros_visuals.egg-info/requires.txt
+[0.797s] writing top-level names to ros_visuals.egg-info/top_level.txt
+[0.797s] writing manifest file 'ros_visuals.egg-info/SOURCES.txt'
+[0.999s] writing manifest file 'ros_visuals.egg-info/SOURCES.txt'
+[1.008s] running build_ext
+[1.008s] Creating /workspaces/legged-robots/my_workspace/install/ros_visuals/lib/python3.12/site-packages/ros-visuals.egg-link (link to .)
+[1.009s] Installing t11 script to /workspaces/legged-robots/my_workspace/install/ros_visuals/lib/ros_visuals
+[1.009s] Installing t12 script to /workspaces/legged-robots/my_workspace/install/ros_visuals/lib/ros_visuals
+[1.009s] Installing t13 script to /workspaces/legged-robots/my_workspace/install/ros_visuals/lib/ros_visuals
+[1.009s] 
+[1.009s] Installed /workspaces/legged-robots/my_workspace/build/ros_visuals
+[1.009s] running symlink_data
+[1.010s] symbolically linking /workspaces/legged-robots/my_workspace/build/ros_visuals/package.xml -> /workspaces/legged-robots/my_workspace/install/ros_visuals/share/ament_index/resource_index/packages
+[1.010s] creating /workspaces/legged-robots/my_workspace/install/ros_visuals/share/ros_visuals/config
+[1.010s] symbolically linking /workspaces/legged-robots/my_workspace/build/ros_visuals/config/compare_cage.rviz -> /workspaces/legged-robots/my_workspace/install/ros_visuals/share/ros_visuals/config
+[1.010s] symbolically linking /workspaces/legged-robots/my_workspace/build/ros_visuals/config/talos.rviz -> /workspaces/legged-robots/my_workspace/install/ros_visuals/share/ros_visuals/config
+[1.010s] symbolically linking /workspaces/legged-robots/my_workspace/build/ros_visuals/config/rviz_config.rviz -> /workspaces/legged-robots/my_workspace/install/ros_visuals/share/ros_visuals/config
+[1.010s] symbolically linking /workspaces/legged-robots/my_workspace/build/ros_visuals/config/talos_new.rviz -> /workspaces/legged-robots/my_workspace/install/ros_visuals/share/ros_visuals/config
+[1.010s] creating /workspaces/legged-robots/my_workspace/install/ros_visuals/share/ros_visuals/launch
+[1.010s] symbolically linking /workspaces/legged-robots/my_workspace/build/ros_visuals/launch/launch.py -> /workspaces/legged-robots/my_workspace/install/ros_visuals/share/ros_visuals/launch
+[1.010s] symbolically linking /workspaces/legged-robots/my_workspace/build/ros_visuals/launch/talos_control_launch.py -> /workspaces/legged-robots/my_workspace/install/ros_visuals/share/ros_visuals/launch
+[1.010s] symbolically linking /workspaces/legged-robots/my_workspace/build/ros_visuals/launch/talos_rviz_launch.py -> /workspaces/legged-robots/my_workspace/install/ros_visuals/share/ros_visuals/launch
+[1.010s] symbolically linking /workspaces/legged-robots/my_workspace/build/ros_visuals/launch/compare_methods.launch.py -> /workspaces/legged-robots/my_workspace/install/ros_visuals/share/ros_visuals/launch
+[1.034s] Invoked command in '/workspaces/legged-robots/my_workspace/build/ros_visuals' returned '0': PYTHONPATH=/workspaces/legged-robots/my_workspace/build/ros_visuals/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspaces/legged-robots/my_workspace/install/ros_visuals/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /workspaces/legged-robots/my_workspace/build/ros_visuals/build --no-deps symlink_data

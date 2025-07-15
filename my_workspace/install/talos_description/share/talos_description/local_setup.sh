@@ -1,1 +1,1 @@
-/workspaces/workspaces/legged-robots/my_workspace/build/talos_description/ament_cmake_environment_hooks/local_setup.sh
+/workspaces/legged-robots/my_workspace/build/talos_description/ament_cmake_environment_hooks/local_setup.sh

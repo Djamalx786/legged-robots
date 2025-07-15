@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_files("/workspaces/legged-robots/my_workspace/src/ainex_description" FILES "/workspaces/legged-robots/my_workspace/build/ainex_description/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/ainex_description")

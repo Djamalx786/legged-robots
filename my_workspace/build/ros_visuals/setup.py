@@ -1,1 +1,1 @@
-/workspaces/workspaces/legged-robots/my_workspace/src/ros_visuals/setup.py
+/workspaces/legged-robots/my_workspace/src/ros_visuals/setup.py

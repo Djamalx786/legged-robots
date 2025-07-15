@@ -12,14 +12,17 @@ from launch import LaunchDescription
 def generate_launch_description():
     # Declare the launch description
     ld = LaunchDescription()
-    talos_description_pkg_share = FindPackageShare('talos_description').find('talos_description')
-    urdf_file_path = os.path.join(talos_description_pkg_share, 'robots', 'talos_reduced_no_hands.urdf')
+    #talos_description_pkg_share = FindPackageShare('talos_description').find('talos_description')
+    #urdf_file_path = os.path.join(talos_description_pkg_share, 'robots', 'talos_reduced_no_hands.urdf')
+
+    ainex_description_pkg_share = FindPackageShare('ainex_description').find('ainex_description')
+    ainex_urdf_file_path = os.path.join(ainex_description_pkg_share, 'robots', 'ainex.urdf')
 
     # Declare the RViz configuration file path
     rviz_config_dir = os.path.join(FindPackageShare('ros_visuals').find('ros_visuals'), 'config')
-    rviz_config_file = os.path.join(rviz_config_dir, 'talos.rviz')    
+    #rviz_config_file = os.path.join(rviz_config_dir, 'talos.rviz')    
 
-    with open(urdf_file_path, 'r') as urdf_temp:
+    with open(ainex_urdf_file_path, 'r') as urdf_temp:
         robot_description = urdf_temp.read()
 
     params = {'robot_description': robot_description}
@@ -31,7 +34,7 @@ def generate_launch_description():
         executable='rviz2',
         name='rviz2',
         output='screen',
-        arguments=['-d', rviz_config_file], 
+        #arguments=['-d', rviz_config_file], 
     )
     
     robot_state_publisher = launch_ros.actions.Node(package='robot_state_publisher',
@@ -82,9 +85,9 @@ def generate_launch_description():
     # Add the nodes to the launch description
     ld.add_action(robot_state_publisher)
     ld.add_action(rviz_node)
-    #ld.add_action(t4_node)
+    ld.add_action(t4_node)
     #ld.add_action(one_leg_stand_node)
     #ld.add_action(squatting_node)
     #ld.add_action(t51_node)
-    ld.add_action(t52_node)
+    #ld.add_action(t52_node)
     return ld

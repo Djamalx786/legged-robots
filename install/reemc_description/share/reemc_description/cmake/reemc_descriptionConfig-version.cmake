@@ -1,1 +1,0 @@
-/workspaces/workspaces/legged-robots/build/reemc_description/ament_cmake_core/reemc_descriptionConfig-version.cmake

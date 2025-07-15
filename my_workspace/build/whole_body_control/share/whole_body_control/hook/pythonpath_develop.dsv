@@ -1,1 +1,1 @@
-prepend-non-duplicate;PYTHONPATH;/workspaces/workspaces/legged-robots/my_workspace/build/whole_body_control
+prepend-non-duplicate;PYTHONPATH;/workspaces/legged-robots/my_workspace/build/whole_body_control

@@ -1,1 +1,1 @@
-/workspaces/workspaces/legged-robots/my_workspace/src/simulator/setup.py
+/workspaces/legged-robots/my_workspace/src/simulator/setup.py
