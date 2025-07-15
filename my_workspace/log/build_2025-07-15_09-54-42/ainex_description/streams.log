@@ -1,0 +1,77 @@
+[0.131s] Invoking command in '/workspaces/legged-robots/my_workspace/build/ainex_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspaces/legged-robots/my_workspace/install/whole_body_control:/workspaces/legged-robots/my_workspace/install/walking:/workspaces/legged-robots/my_workspace/install/bullet_sims:/workspaces/legged-robots/my_workspace/install/simulator:/workspaces/legged-robots/my_workspace/install/ros_visuals:/opt/ros/rolling /usr/bin/cmake /workspaces/legged-robots/my_workspace/src/ainex_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/workspaces/legged-robots/my_workspace/install/ainex_description
+[0.167s] -- The C compiler identification is GNU 13.3.0
+[0.202s] -- The CXX compiler identification is GNU 13.3.0
+[0.218s] -- Detecting C compiler ABI info
+[0.291s] -- Detecting C compiler ABI info - done
+[0.298s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.299s] -- Detecting C compile features
+[0.300s] -- Detecting C compile features - done
+[0.310s] -- Detecting CXX compiler ABI info
+[0.400s] -- Detecting CXX compiler ABI info - done
+[0.404s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.405s] -- Detecting CXX compile features
+[0.405s] -- Detecting CXX compile features - done
+[0.408s] -- Found ament_cmake: 2.7.2 (/opt/ros/rolling/share/ament_cmake/cmake)
+[0.529s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.581s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.636s] -- Found urdf: 2.12.2 (/opt/ros/rolling/share/urdf/cmake)
+[0.651s] -- Found xacro: 2.0.13 (/opt/ros/rolling/share/xacro/cmake)
+[0.654s] -- Found ament_lint_auto: 0.19.1 (/opt/ros/rolling/share/ament_lint_auto/cmake)
+[0.730s] -- Added test 'lint_cmake' to check CMake code style
+[0.731s] -- Added test 'xmllint' to check XML markup files
+[0.734s] -- Configuring done (0.6s)
+[0.736s] -- Generating done (0.0s)
+[0.736s] -- Build files have been written to: /workspaces/legged-robots/my_workspace/build/ainex_description
+[0.740s] Invoked command in '/workspaces/legged-robots/my_workspace/build/ainex_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspaces/legged-robots/my_workspace/install/whole_body_control:/workspaces/legged-robots/my_workspace/install/walking:/workspaces/legged-robots/my_workspace/install/bullet_sims:/workspaces/legged-robots/my_workspace/install/simulator:/workspaces/legged-robots/my_workspace/install/ros_visuals:/opt/ros/rolling /usr/bin/cmake /workspaces/legged-robots/my_workspace/src/ainex_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/workspaces/legged-robots/my_workspace/install/ainex_description
+[0.740s] Invoking command in '/workspaces/legged-robots/my_workspace/build/ainex_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspaces/legged-robots/my_workspace/install/whole_body_control:/workspaces/legged-robots/my_workspace/install/walking:/workspaces/legged-robots/my_workspace/install/bullet_sims:/workspaces/legged-robots/my_workspace/install/simulator:/workspaces/legged-robots/my_workspace/install/ros_visuals:/opt/ros/rolling /usr/bin/cmake --build /workspaces/legged-robots/my_workspace/build/ainex_description -- -j24 -l24
+[0.777s] Invoked command in '/workspaces/legged-robots/my_workspace/build/ainex_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspaces/legged-robots/my_workspace/install/whole_body_control:/workspaces/legged-robots/my_workspace/install/walking:/workspaces/legged-robots/my_workspace/install/bullet_sims:/workspaces/legged-robots/my_workspace/install/simulator:/workspaces/legged-robots/my_workspace/install/ros_visuals:/opt/ros/rolling /usr/bin/cmake --build /workspaces/legged-robots/my_workspace/build/ainex_description -- -j24 -l24
+[0.777s] Invoking command in '/workspaces/legged-robots/my_workspace/build/ainex_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspaces/legged-robots/my_workspace/install/whole_body_control:/workspaces/legged-robots/my_workspace/install/walking:/workspaces/legged-robots/my_workspace/install/bullet_sims:/workspaces/legged-robots/my_workspace/install/simulator:/workspaces/legged-robots/my_workspace/install/ros_visuals:/opt/ros/rolling /usr/bin/cmake --install /workspaces/legged-robots/my_workspace/build/ainex_description
+[0.781s] -- Install configuration: ""
+[0.782s] -- Execute custom install script
+[0.782s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/meshes/body_link.STL
+[0.790s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/meshes/head_pan_link.STL
+[0.798s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/meshes/head_tilt_link.STL
+[0.804s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/meshes/l_ank_pitch_link.STL
+[0.810s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/meshes/l_ank_roll_link.STL
+[0.816s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/meshes/l_el_pitch_link.STL
+[0.823s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/meshes/l_el_yaw_link.STL
+[0.829s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/meshes/l_gripper_link.STL
+[0.835s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/meshes/l_hip_pitch_link.STL
+[0.841s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/meshes/l_hip_roll_link.STL
+[0.850s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/meshes/l_hip_yaw_link.STL
+[0.858s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/meshes/l_knee_link.STL
+[0.865s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/meshes/l_sho_pitch_link.STL
+[0.873s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/meshes/l_sho_roll_link.STL
+[0.883s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/meshes/r_ank_pitch_link.STL
+[0.889s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/meshes/r_ank_roll_link.STL
+[0.895s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/meshes/r_el_pitch_link.STL
+[0.904s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/meshes/r_el_yaw_link.STL
+[0.911s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/meshes/r_gripper_link.STL
+[0.918s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/meshes/r_hip_pitch_link.STL
+[0.924s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/meshes/r_hip_roll_link.STL
+[0.931s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/meshes/r_hip_yaw_link.STL
+[0.938s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/meshes/r_knee_link.STL
+[0.945s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/meshes/r_sho_pitch_link.STL
+[0.952s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/meshes/r_sho_roll_link.STL
+[0.960s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/robots/ainex.urdf
+[0.968s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/robots/ainex.urdf.xacro
+[0.975s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/robots/ainex.xacro
+[0.983s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/robots/gazebo.xacro
+[0.990s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/robots/materials.xacro
+[0.997s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/robots/transmissions.xacro
+[1.006s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ament_index/resource_index/package_run_dependencies/ainex_description
+[1.013s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ament_index/resource_index/parent_prefix_path/ainex_description
+[1.020s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/environment/ament_prefix_path.sh
+[1.028s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/environment/ament_prefix_path.dsv
+[1.036s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/environment/path.sh
+[1.043s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/environment/path.dsv
+[1.052s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/local_setup.bash
+[1.059s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/local_setup.sh
+[1.068s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/local_setup.zsh
+[1.077s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/local_setup.dsv
+[1.086s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/package.dsv
+[1.090s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ament_index/resource_index/packages/ainex_description
+[1.099s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/cmake/ainex_descriptionConfig.cmake
+[1.106s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/cmake/ainex_descriptionConfig-version.cmake
+[1.113s] -- Symlinking: /workspaces/legged-robots/my_workspace/install/ainex_description/share/ainex_description/package.xml
+[1.121s] Invoked command in '/workspaces/legged-robots/my_workspace/build/ainex_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspaces/legged-robots/my_workspace/install/whole_body_control:/workspaces/legged-robots/my_workspace/install/walking:/workspaces/legged-robots/my_workspace/install/bullet_sims:/workspaces/legged-robots/my_workspace/install/simulator:/workspaces/legged-robots/my_workspace/install/ros_visuals:/opt/ros/rolling /usr/bin/cmake --install /workspaces/legged-robots/my_workspace/build/ainex_description

@@ -314,6 +314,9 @@ message(STATUS "Execute custom install script")
 
 # begin of custom install code
 
+# install(DIRECTORY "meshes/" "DESTINATION" "share/ainex_description/meshes")
+ament_cmake_symlink_install_directory("/workspaces/legged-robots/my_workspace/src/ainex_description" DIRECTORY "meshes/" "DESTINATION" "share/ainex_description/meshes")
+
 # install(DIRECTORY "robots/" "DESTINATION" "share/ainex_description/robots")
 ament_cmake_symlink_install_directory("/workspaces/legged-robots/my_workspace/src/ainex_description" DIRECTORY "robots/" "DESTINATION" "share/ainex_description/robots")
 

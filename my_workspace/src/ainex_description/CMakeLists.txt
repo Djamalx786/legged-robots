@@ -23,6 +23,11 @@ if(BUILD_TESTING)
 endif()
 
 install(
+  DIRECTORY meshes/
+  DESTINATION share/${PROJECT_NAME}/meshes
+)
+
+install(
   DIRECTORY robots/
   DESTINATION share/${PROJECT_NAME}/robots
 )
